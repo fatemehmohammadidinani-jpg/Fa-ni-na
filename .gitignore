@@ -1,0 +1,54 @@
+# Environment files
+**/.env
+!**/.env.example
+
+# Secrets and private keys
+**/secrets/*
+!**/secrets/.gitkeep
+**/certificates/*
+*.key
+*.csr
+*.crt
+*.pem
+*.p12
+*.pfx
+
+# External cloned repository
+# The selected application source required for deployment is maintained in 04_docker/.
+03_project_clone/awesome-compose/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Ansible local/runtime files
+*.retry
+.ansible/
+ansible-bin-backup-*/
+
+# Docker local runtime overrides
+docker-compose.override.yml
+compose.override.yml
+
+# Editors and IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Generic temporary and backup files
+*.tmp
+*.temp
+*.bak
+*.backup
