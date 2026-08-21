@@ -1,0 +1,14 @@
+.
+├── README.md
+├── backend
+│   ├── Dockerfile
+│   ├── hello.py
+│   └── requirements.txt
+├── compose.yaml
+├── db
+│   └── password.txt
+└── proxy
+    ├── Dockerfile
+    └── conf
+
+3 directories, 8 files
