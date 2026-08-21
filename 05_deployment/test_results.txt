@@ -1,0 +1,44 @@
+========================================
+Application Deployment Test Results
+========================================
+
+Generated at: 2026-08-20T12:41:40+03:30
+Deployment server: 192.168.200.54
+
+----------------------------------------
+Test 1: From Deployment Server
+----------------------------------------
+
+URL:
+http://127.0.0.1/
+
+HTTP Status:
+200
+
+Response:
+<div>   Hello  Blog post #1</div><div>   Hello  Blog post #2</div><div>   Hello  Blog post #3</div><div>   Hello  Blog post #4</div>
+
+Result:
+PASSED
+
+----------------------------------------
+Test 2: From Ansible Controller
+----------------------------------------
+
+URL:
+http://192.168.200.54/
+
+HTTP Status:
+200
+
+Response:
+<div>   Hello  Blog post #1</div><div>   Hello  Blog post #2</div><div>   Hello  Blog post #3</div><div>   Hello  Blog post #4</div>
+
+Result:
+PASSED
+
+----------------------------------------
+Final Result
+----------------------------------------
+
+Application deployment test: PASSED
