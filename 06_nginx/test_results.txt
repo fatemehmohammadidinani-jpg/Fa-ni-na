@@ -1,0 +1,39 @@
+========================================
+Nginx Domain Access Test Results
+========================================
+
+Generated at: 2026-08-21T10:42:07+03:30
+Server IP: 192.168.200.54
+Domain: myapp.test
+
+===== Hosts Resolution Test =====
+192.168.200.54  myapp.test
+
+===== Nginx Health Endpoint =====
+HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 21 Aug 2026 07:12:07 GMT
+Content-Type: text/plain
+Content-Length: 8
+Connection: keep-alive
+
+healthy
+
+
+===== Application Through Nginx =====
+HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 21 Aug 2026 07:12:07 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 132
+Connection: keep-alive
+
+<div>   Hello  Blog post #1</div><div>   Hello  Blog post #2</div><div>   Hello  Blog post #3</div><div>   Hello  Blog post #4</div>
+
+===== HTTP Summary =====
+Resolved IP: 192.168.200.54
+HTTP Status: 200
+Content Type: text/html; charset=utf-8
+Total Time: 0.005061s
+
+Final result: PASSED

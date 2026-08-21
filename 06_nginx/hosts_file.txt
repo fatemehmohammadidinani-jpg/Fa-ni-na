@@ -1,0 +1,13 @@
+========================================
+/etc/hosts on AlmaLinux Controller
+========================================
+
+Generated at: 2026-08-21T10:42:07+03:30
+
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+192.168.1.10	app.local
+192.168.1.11	db.local
+192.168.1.12	cache.local
+192.168.200.54 myapp.test
