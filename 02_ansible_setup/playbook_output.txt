@@ -1,0 +1,82 @@
+
+PLAY [Prepare Ubuntu server for containerized deployment] **********************
+
+TASK [Gathering Facts] *********************************************************
+ok: [ubuntu_deploy]
+
+TASK [Validate the target operating system] ************************************
+ok: [ubuntu_deploy] => {
+    "changed": false,
+    "msg": "Ubuntu 22.04 LTS (Jammy) detected."
+}
+
+TASK [Update APT cache and upgrade installed packages] *************************
+changed: [ubuntu_deploy]
+
+TASK [Install essential packages] **********************************************
+ok: [ubuntu_deploy]
+
+TASK [Create the APT keyrings directory] ***************************************
+ok: [ubuntu_deploy]
+
+TASK [Download the official Docker repository signing key] *********************
+changed: [ubuntu_deploy]
+
+TASK [Configure the official Docker APT repository] ****************************
+changed: [ubuntu_deploy]
+
+TASK [Install Docker Engine and Docker Compose plugin] *************************
+changed: [ubuntu_deploy]
+
+TASK [Enable and start Docker services] ****************************************
+ok: [ubuntu_deploy] => (item=containerd)
+ok: [ubuntu_deploy] => (item=docker)
+
+TASK [Add the deployment user to the docker group] *****************************
+changed: [ubuntu_deploy]
+
+TASK [Allow required TCP ports through UFW] ************************************
+changed: [ubuntu_deploy] => (item={'port': '22', 'comment': 'SSH'})
+changed: [ubuntu_deploy] => (item={'port': '80', 'comment': 'HTTP for Nginx container'})
+changed: [ubuntu_deploy] => (item={'port': '443', 'comment': 'HTTPS for Nginx container'})
+
+TASK [Set the default incoming firewall policy] ********************************
+ok: [ubuntu_deploy]
+
+TASK [Set the default outgoing firewall policy] ********************************
+ok: [ubuntu_deploy]
+
+TASK [Enable UFW logging] ******************************************************
+changed: [ubuntu_deploy]
+
+TASK [Enable UFW] **************************************************************
+changed: [ubuntu_deploy]
+
+TASK [Create the bootstrap Nginx project directory] ****************************
+changed: [ubuntu_deploy]
+
+TASK [Create the bootstrap Nginx Compose file] *********************************
+changed: [ubuntu_deploy]
+
+TASK [Start the bootstrap Nginx container with Docker Compose] *****************
+changed: [ubuntu_deploy]
+
+TASK [Wait for Nginx to listen on HTTP port] ***********************************
+ok: [ubuntu_deploy]
+
+TASK [Verify the Nginx HTTP response] ******************************************
+ok: [ubuntu_deploy]
+
+TASK [Show post-setup notice] **************************************************
+ok: [ubuntu_deploy] => {
+    "msg": [
+        "Server preparation completed.",
+        "Nginx is running inside the bootstrap-nginx container.",
+        "Log out and reconnect before using Docker without sudo as rahmati.",
+        "The bootstrap Nginx container will be replaced by the final application Compose stack."
+    ]
+}
+
+PLAY RECAP *********************************************************************
+ubuntu_deploy              : ok=21   changed=11   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
