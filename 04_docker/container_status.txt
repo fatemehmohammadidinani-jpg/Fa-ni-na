@@ -1,0 +1,10 @@
+========================================
+Docker Compose Container Status
+========================================
+
+Generated at: 2026-08-20T11:58:46+03:30
+
+NAME                              IMAGE                                                                     COMMAND                  SERVICE   CREATED              STATUS                        PORTS
+nginx-flask-mysql-lab-backend-1   sha256:c395a5084884f64052a48f582f19121df83f1d4ad709ff801c650edf07d551d2   "gunicorn --bind=0.0…"   backend   About a minute ago   Up 59 seconds (healthy)       8000/tcp
+nginx-flask-mysql-lab-db-1        mariadb:10.11.18-jammy                                                    "docker-entrypoint.s…"   db        About a minute ago   Up About a minute (healthy)   3306/tcp
+nginx-flask-mysql-lab-proxy-1     nginx:1.30.4-alpine                                                       "/docker-entrypoint.…"   proxy     About a minute ago   Up 52 seconds (healthy)       0.0.0.0:8080->80/tcp, [::]:8080->80/tcp
