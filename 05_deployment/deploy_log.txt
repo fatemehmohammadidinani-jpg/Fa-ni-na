@@ -18,9 +18,9 @@ TASK [Create host group matching the backend container GID] ********************
 changed: [ubuntu_deploy]
 
 TASK [Create application directories] ******************************************
-changed: [ubuntu_deploy] => (item={'path': '/opt/nginx-flask-mysql', 'owner': 'rahmati', 'group': 'rahmati', 'mode': '0755'})
-changed: [ubuntu_deploy] => (item={'path': '/opt/nginx-flask-mysql/app', 'owner': 'rahmati', 'group': 'rahmati', 'mode': '0755'})
-changed: [ubuntu_deploy] => (item={'path': '/opt/nginx-flask-mysql/nginx', 'owner': 'rahmati', 'group': 'rahmati', 'mode': '0755'})
+changed: [ubuntu_deploy] => (item={'path': '/opt/nginx-flask-mysql', 'owner': 'ubuntu', 'group': 'ubuntu', 'mode': '0755'})
+changed: [ubuntu_deploy] => (item={'path': '/opt/nginx-flask-mysql/app', 'owner': 'ubuntu', 'group': 'ubuntu', 'mode': '0755'})
+changed: [ubuntu_deploy] => (item={'path': '/opt/nginx-flask-mysql/nginx', 'owner': 'ubuntu', 'group': 'ubuntu', 'mode': '0755'})
 changed: [ubuntu_deploy] => (item={'path': '/opt/nginx-flask-mysql/secrets', 'owner': 'root', 'group': 'appcontainer', 'mode': '0750'})
 
 TASK [Copy application deployment files] ***************************************

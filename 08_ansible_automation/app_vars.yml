@@ -1,7 +1,7 @@
 ---
 deployment_dir: /opt/nginx-flask-mysql
-deployment_user: rahmati
-deployment_group: rahmati
+deployment_user: ubuntu
+deployment_group: ubuntu
 
 source_dir: "{{ playbook_dir }}/../04_docker"
 compose_file_name: docker-compose.yml

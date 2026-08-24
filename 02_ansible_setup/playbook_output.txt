@@ -72,7 +72,7 @@ ok: [ubuntu_deploy] => {
     "msg": [
         "Server preparation completed.",
         "Nginx is running inside the bootstrap-nginx container.",
-        "Log out and reconnect before using Docker without sudo as rahmati.",
+        "Log out and reconnect before using Docker without sudo as ubuntu.",
         "The bootstrap Nginx container will be replaced by the final application Compose stack."
     ]
 }

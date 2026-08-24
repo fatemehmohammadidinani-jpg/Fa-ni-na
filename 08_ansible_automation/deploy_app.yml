@@ -240,10 +240,9 @@
               - backend
             dependencies: true
             state: present
-            build: always
+            build: never
             pull: missing
-            wait: true
-            wait_timeout: "{{ compose_wait_timeout }}"
+            wait: false
           register: application_compose_result
 
         - name: Test the backend from inside its container

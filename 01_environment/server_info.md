@@ -6,8 +6,8 @@
   ------------------ --------------------------------------
   Server Role        Deployment Target Server
   Operating System   Ubuntu 22.04.5 LTS (Jammy Jellyfish)
-  Hostname           local20054
-  IP Address         192.168.200.54
+  Hostname           target
+  IP Address         172.20.10.5
 
 ------------------------------------------------------------------------
 
@@ -17,7 +17,7 @@
   ----------------------- ---------------
   SSH Method              SSH
   SSH Port                22
-  Username                rahmati
+  Username                ubuntu
   Authentication Method   Not specified
 
 ------------------------------------------------------------------------
@@ -65,7 +65,7 @@
   Item                Value
   ------------------- -------------------
   Network Interface   ens33
-  IP Address          192.168.200.54/24
+  IP Address          172.20.10.5/24
   MAC Address         00:50:56:a7:75:79
 
 ------------------------------------------------------------------------

@@ -32,7 +32,7 @@
 
 ### وظایف اصلی
 
-- نصب و پیکربندی Ansible روی AlmaLinux Controller
+- نصب و پیکربندی Ansible روی Ubuntu Controller
 - حل تداخل نسخه‌های Ansible و Python
 - ایجاد و مدیریت Inventory
 - تنظیم Python Interpreter

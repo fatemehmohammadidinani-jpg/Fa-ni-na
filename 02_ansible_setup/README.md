@@ -5,8 +5,8 @@
 ## اطلاعات سرور
 
 - Host alias: `ubuntu_deploy`
-- IP: `192.168.200.54`
-- SSH user: `rahmati`
+- IP: `172.20.10.5`
+- SSH user: `ubuntu`
 - Python interpreter: `/usr/bin/python3`
 - Operating system: Ubuntu 22.04 LTS
 
@@ -41,7 +41,7 @@ ansible-galaxy collection install -r requirements.yml
 ابتدا اتصال مستقیم را بررسی کنید:
 
 ```bash
-ssh rahmati@192.168.200.54
+ssh ubuntu@172.20.10.5
 ```
 
 در سرور مقصد مطمئن شوید کاربر اجازه sudo دارد:
@@ -54,7 +54,7 @@ python3 --version
 برای استفاده از SSH Key:
 
 ```bash
-ssh-copy-id rahmati@192.168.200.54
+ssh-copy-id ubuntu@172.20.10.5
 ```
 
 ## 3. بررسی Inventory

@@ -233,13 +233,13 @@
               Result: PASSED
 
               ----------------------------------------
-              HTTP Redirect Test from AlmaLinux Controller
+              HTTP Redirect Test from Ubuntu Controller
               ----------------------------------------
 
               {{ controller_http_redirect.stdout }}
 
               ----------------------------------------
-              HTTPS Test from AlmaLinux Controller
+              HTTPS Test from Ubuntu Controller
               ----------------------------------------
 
               {{ controller_https_test.stdout }}

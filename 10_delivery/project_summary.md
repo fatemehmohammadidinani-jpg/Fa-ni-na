@@ -6,7 +6,7 @@
 
 معماری نهایی شامل اجزای زیر است:
 
-- AlmaLinux به‌عنوان Ansible Controller
+- Ubuntu به‌عنوان Ansible Controller
 - Ubuntu 22.04.5 LTS به‌عنوان سرور مقصد
 - Nginx Container به‌عنوان Reverse Proxy
 - Flask و Gunicorn به‌عنوان Backend
@@ -20,7 +20,7 @@
 در طول پروژه موارد زیر پیاده‌سازی شدند:
 
 - جمع‌آوری و مستندسازی اطلاعات سرور مقصد
-- نصب و پیکربندی Ansible روی AlmaLinux Controller
+- نصب و پیکربندی Ansible روی Ubuntu Controller
 - تعریف Inventory و تست ارتباط با Ubuntu
 - آماده‌سازی خودکار Ubuntu با Ansible
 - نصب Docker Engine و Docker Compose Plugin
@@ -47,7 +47,7 @@
 
 #### چالش
 
-روی AlmaLinux یک نسخه قدیمی Ansible با Python 3.9 نصب بود. پس از نصب نسخه جدید با `pipx`، فرمان‌های موجود در `~/.local/bin` همچنان نسخه قدیمی را اجرا می‌کردند.
+روی Ubuntu یک نسخه قدیمی Ansible با Python 3.9 نصب بود. پس از نصب نسخه جدید با `pipx`، فرمان‌های موجود در `~/.local/bin` همچنان نسخه قدیمی را اجرا می‌کردند.
 
 #### راه‌حل
 
@@ -109,7 +109,7 @@ permission denied while trying to connect to the docker API
 
 #### راه‌حل
 
-- اضافه‌کردن کاربر `naser` به گروه `docker`
+- اضافه‌کردن کاربر `ubunto` به گروه `docker`
 - Logout و Login مجدد
 - خودداری از تغییر ناامن Permission سوکت به `666`
 - تست دسترسی با `docker info` و `docker ps`

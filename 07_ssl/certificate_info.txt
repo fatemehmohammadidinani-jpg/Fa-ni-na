@@ -3,10 +3,10 @@ Self-Signed Certificate Information
 ========================================
 
 Generated at:
-2026-08-21T15:23:50+03:30
+2026-08-23T23:01:01+00:00
 
 Deployment server:
-192.168.200.54
+172.20.10.5
 
 Domain:
 myapp.test
@@ -69,22 +69,22 @@ Certificate Details
 
 subject=C = AZ, ST = Baku, L = Baku, O = DevOps Lab, OU = Training, CN = myapp.test
 issuer=C = AZ, ST = Baku, L = Baku, O = DevOps Lab, OU = Training, CN = myapp.test
-serial=5FB597ECA76A2A2911027BEC3B62EF7835AE6CEF
-notBefore=Aug 21 11:53:23 2026 GMT
-notAfter=Aug 21 11:53:23 2027 GMT
-sha256 Fingerprint=6A:2E:65:C2:D1:D0:51:DA:34:F2:3B:48:F6:28:89:F0:98:17:BC:96:88:B8:11:AA:50:97:52:DB:0B:8B:DD:D0
+serial=41DE9D7DD6F02F28179C59C20A746E8A0EAFC805
+notBefore=Aug 23 22:53:04 2026 GMT
+notAfter=Aug 23 22:53:04 2027 GMT
+sha256 Fingerprint=8E:C3:7E:20:BD:69:D5:7D:83:CF:75:6A:26:74:36:05:72:30:E6:43:DB:0C:DB:29:F3:73:68:0F:AA:F4:81:01
 X509v3 Subject Alternative Name: 
-    DNS:myapp.test, IP Address:192.168.200.54
+    DNS:myapp.test, IP Address:172.20.10.5
 
 ----------------------------------------
 Certificate Served by Nginx
 ----------------------------------------
 
-subject=C=AZ, ST=Baku, L=Baku, O=DevOps Lab, OU=Training, CN=myapp.test
-issuer=C=AZ, ST=Baku, L=Baku, O=DevOps Lab, OU=Training, CN=myapp.test
-serial=5FB597ECA76A2A2911027BEC3B62EF7835AE6CEF
-notBefore=Aug 21 11:53:23 2026 GMT
-notAfter=Aug 21 11:53:23 2027 GMT
-sha256 Fingerprint=6A:2E:65:C2:D1:D0:51:DA:34:F2:3B:48:F6:28:89:F0:98:17:BC:96:88:B8:11:AA:50:97:52:DB:0B:8B:DD:D0
+subject=C = AZ, ST = Baku, L = Baku, O = DevOps Lab, OU = Training, CN = myapp.test
+issuer=C = AZ, ST = Baku, L = Baku, O = DevOps Lab, OU = Training, CN = myapp.test
+serial=41DE9D7DD6F02F28179C59C20A746E8A0EAFC805
+notBefore=Aug 23 22:53:04 2026 GMT
+notAfter=Aug 23 22:53:04 2027 GMT
+sha256 Fingerprint=8E:C3:7E:20:BD:69:D5:7D:83:CF:75:6A:26:74:36:05:72:30:E6:43:DB:0C:DB:29:F3:73:68:0F:AA:F4:81:01
 X509v3 Subject Alternative Name: 
-    DNS:myapp.test, IP Address:192.168.200.54
+    DNS:myapp.test, IP Address:172.20.10.5

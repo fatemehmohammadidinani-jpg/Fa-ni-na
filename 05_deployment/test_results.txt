@@ -3,7 +3,7 @@ Application Deployment Test Results
 ========================================
 
 Generated at: 2026-08-20T12:41:40+03:30
-Deployment server: 192.168.200.54
+Deployment server: 172.20.10.5
 
 ----------------------------------------
 Test 1: From Deployment Server
@@ -26,7 +26,7 @@ Test 2: From Ansible Controller
 ----------------------------------------
 
 URL:
-http://192.168.200.54/
+http://172.20.10.5/
 
 HTTP Status:
 200

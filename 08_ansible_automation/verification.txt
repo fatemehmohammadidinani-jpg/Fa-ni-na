@@ -3,10 +3,10 @@ Ansible Automation Verification
 ========================================
 
 Generated at:
-2026-08-21T20:25:31+03:30
+2026-08-24T14:55:13+00:00
 
 Deployment server:
-192.168.200.54
+172.20.10.5
 
 Domain:
 myapp.test
@@ -15,10 +15,10 @@ myapp.test
 Container Status
 ----------------------------------------
 
-NAME                          IMAGE                           COMMAND                  SERVICE   CREATED          STATUS                    PORTS
-nginx-flask-mysql-backend-1   nginx-flask-mysql-backend:1.0   "gunicorn --bind=0.0…"   backend   58 seconds ago   Up 55 seconds (healthy)   8000/tcp
-nginx-flask-mysql-db-1        mariadb:10.11.18-jammy          "docker-entrypoint.s…"   db        32 hours ago     Up 32 hours (healthy)     3306/tcp
-nginx-flask-mysql-proxy-1     nginx:1.30.4-alpine             "/docker-entrypoint.…"   proxy     18 seconds ago   Up 16 seconds (healthy)   0.0.0.0:80->80/tcp, [::]:80->80/tcp, 0.0.0.0:443->443/tcp, [::]:443->443/tcp
+NAME                          IMAGE                           COMMAND                  SERVICE   CREATED        STATUS                   PORTS
+nginx-flask-mysql-backend-1   nginx-flask-mysql-backend:1.0   "gunicorn --bind=0.0…"   backend   16 hours ago   Up 8 minutes (healthy)   8000/tcp
+nginx-flask-mysql-db-1        mariadb:10.11.18-jammy          "docker-entrypoint.s…"   db        16 hours ago   Up 8 minutes (healthy)   3306/tcp
+nginx-flask-mysql-proxy-1     nginx:1.30.4-alpine             "/docker-entrypoint.…"   proxy     16 hours ago   Up 8 minutes (healthy)   0.0.0.0:80->80/tcp, [::]:80->80/tcp, 0.0.0.0:443->443/tcp, [::]:443->443/tcp
 
 ----------------------------------------
 Nginx Configuration Test
@@ -34,12 +34,12 @@ Certificate Information
 
 subject=C = AZ, ST = Baku, L = Baku, O = DevOps Lab, OU = Training, CN = myapp.test
 issuer=C = AZ, ST = Baku, L = Baku, O = DevOps Lab, OU = Training, CN = myapp.test
-serial=5FB597ECA76A2A2911027BEC3B62EF7835AE6CEF
-notBefore=Aug 21 11:53:23 2026 GMT
-notAfter=Aug 21 11:53:23 2027 GMT
-sha256 Fingerprint=6A:2E:65:C2:D1:D0:51:DA:34:F2:3B:48:F6:28:89:F0:98:17:BC:96:88:B8:11:AA:50:97:52:DB:0B:8B:DD:D0
+serial=41DE9D7DD6F02F28179C59C20A746E8A0EAFC805
+notBefore=Aug 23 22:53:04 2026 GMT
+notAfter=Aug 23 22:53:04 2027 GMT
+sha256 Fingerprint=8E:C3:7E:20:BD:69:D5:7D:83:CF:75:6A:26:74:36:05:72:30:E6:43:DB:0C:DB:29:F3:73:68:0F:AA:F4:81:01
 X509v3 Subject Alternative Name: 
-    DNS:myapp.test, IP Address:192.168.200.54
+    DNS:myapp.test, IP Address:172.20.10.5
 
 ----------------------------------------
 HTTP Redirect Test on Ubuntu
@@ -59,24 +59,24 @@ Response:
 Result: PASSED
 
 ----------------------------------------
-HTTP Redirect Test from AlmaLinux Controller
+HTTP Redirect Test from Ubuntu Controller
 ----------------------------------------
 
 HTTP/1.1 301 Moved Permanently
 Server: nginx
-Date: Fri, 21 Aug 2026 16:55:30 GMT
+Date: Mon, 24 Aug 2026 14:55:12 GMT
 Content-Type: text/html
 Content-Length: 162
 Connection: keep-alive
 Location: https://myapp.test/
 
 ----------------------------------------
-HTTPS Test from AlmaLinux Controller
+HTTPS Test from Ubuntu Controller
 ----------------------------------------
 
 HTTP/1.1 200 OK
 Server: nginx
-Date: Fri, 21 Aug 2026 16:55:30 GMT
+Date: Mon, 24 Aug 2026 14:55:13 GMT
 Content-Type: text/html; charset=utf-8
 Content-Length: 132
 Connection: keep-alive
@@ -89,7 +89,7 @@ Follow Redirect Test from Controller
 
 HTTP/1.1 301 Moved Permanently
 Server: nginx
-Date: Fri, 21 Aug 2026 16:55:31 GMT
+Date: Mon, 24 Aug 2026 14:55:13 GMT
 Content-Type: text/html
 Content-Length: 162
 Connection: keep-alive
@@ -97,7 +97,7 @@ Location: https://myapp.test/
 
 HTTP/1.1 200 OK
 Server: nginx
-Date: Fri, 21 Aug 2026 16:55:31 GMT
+Date: Mon, 24 Aug 2026 14:55:13 GMT
 Content-Type: text/html; charset=utf-8
 Content-Length: 132
 Connection: keep-alive
@@ -108,136 +108,287 @@ Connection: keep-alive
 Recent Container Logs
 ----------------------------------------
 
-backend-1  | 2026-08-21T16:54:29.071296272Z [2026-08-21 16:54:29 +0000] [7] [INFO] Starting gunicorn 23.0.0
-backend-1  | 2026-08-21T16:54:29.071735597Z [2026-08-21 16:54:29 +0000] [7] [INFO] Listening at: http://0.0.0.0:8000 (7)
-backend-1  | 2026-08-21T16:54:29.071756623Z [2026-08-21 16:54:29 +0000] [7] [INFO] Using worker: sync
-backend-1  | 2026-08-21T16:54:29.080520451Z [2026-08-21 16:54:29 +0000] [8] [INFO] Booting worker with pid: 8
-backend-1  | 2026-08-21T16:54:33.908422559Z 127.0.0.1 - - [21/Aug/2026:16:54:33 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
-backend-1  | 2026-08-21T16:54:37.143349481Z 127.0.0.1 - - [21/Aug/2026:16:54:37 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
-backend-1  | 2026-08-21T16:54:44.664593541Z 127.0.0.1 - - [21/Aug/2026:16:54:44 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
-backend-1  | 2026-08-21T16:54:55.363624622Z 127.0.0.1 - - [21/Aug/2026:16:54:55 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
-backend-1  | 2026-08-21T16:55:06.197868156Z 127.0.0.1 - - [21/Aug/2026:16:55:06 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
-backend-1  | 2026-08-21T16:55:16.906904860Z 127.0.0.1 - - [21/Aug/2026:16:55:16 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
-db-1       | 2026-08-20T09:09:53.223143618Z 2026-08-20 09:09:53+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.11.18+maria~ubu2204 started.
-db-1       | 2026-08-20T09:09:54.020750169Z 2026-08-20 09:09:54+00:00 [Warn] [Entrypoint]: /sys/fs/cgroup///memory.pressure not writable, functionality unavailable to MariaDB
-db-1       | 2026-08-20T09:09:54.036046811Z 2026-08-20 09:09:54+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
-db-1       | 2026-08-20T09:09:54.075749158Z 2026-08-20 09:09:54+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.11.18+maria~ubu2204 started.
-db-1       | 2026-08-20T09:09:54.777436366Z 2026-08-20 09:09:54+00:00 [Note] [Entrypoint]: Initializing database files
-db-1       | 2026-08-20T09:09:55.061338472Z 2026-08-20  9:09:55 0 [Warning] mariadbd: io_uring_queue_init() failed with EPERM: sysctl kernel.io_uring_disabled has the value 2, or 1 and the user of the process is not a member of sysctl kernel.io_uring_group. (see man 2 io_uring_setup).
-db-1       | 2026-08-20T09:09:55.061424776Z create_uring failed: falling back to libaio
-db-1       | 2026-08-20T09:09:56.366460688Z 2026-08-20 09:09:56+00:00 [Note] [Entrypoint]: Database files initialized
-db-1       | 2026-08-20T09:09:56.373230733Z 2026-08-20 09:09:56+00:00 [Note] [Entrypoint]: Starting temporary server
-db-1       | 2026-08-20T09:09:56.382971885Z 2026-08-20 09:09:56+00:00 [Note] [Entrypoint]: Waiting for server startup
-db-1       | 2026-08-20T09:09:56.431090985Z 2026-08-20  9:09:56 0 [Note] Starting MariaDB 10.11.18-MariaDB-ubu2204 source revision 197f92bee02d8e836f529f37625be69b83e7acbd server_uid 2Cxf39QKVykO/fYSTLeqWM5Khl0= as process 95
-db-1       | 2026-08-20T09:09:56.532290574Z 2026-08-20  9:09:56 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
-db-1       | 2026-08-20T09:09:56.537026878Z 2026-08-20  9:09:56 0 [Note] InnoDB: Number of transaction pools: 1
-db-1       | 2026-08-20T09:09:56.537048824Z 2026-08-20  9:09:56 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
-db-1       | 2026-08-20T09:09:56.537058187Z 2026-08-20  9:09:56 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
-db-1       | 2026-08-20T09:09:56.537329691Z 2026-08-20  9:09:56 0 [Warning] mariadbd: io_uring_queue_init() failed with EPERM: sysctl kernel.io_uring_disabled has the value 2, or 1 and the user of the process is not a member of sysctl kernel.io_uring_group. (see man 2 io_uring_setup).
-db-1       | 2026-08-20T09:09:56.537415810Z create_uring failed: falling back to libaio
-db-1       | 2026-08-20T09:09:56.537650922Z 2026-08-20  9:09:56 0 [Note] InnoDB: Using Linux native AIO
-db-1       | 2026-08-20T09:09:56.539272327Z 2026-08-20  9:09:56 0 [Note] InnoDB: innodb_buffer_pool_size_max=8388608m, innodb_buffer_pool_size=128m
-db-1       | 2026-08-20T09:09:56.541199502Z 2026-08-20  9:09:56 0 [Note] InnoDB: Completed initialization of buffer pool
-db-1       | 2026-08-20T09:09:56.542820329Z 2026-08-20  9:09:56 0 [Note] InnoDB: File system buffers for log disabled (block size=512 bytes)
-db-1       | 2026-08-20T09:09:56.582684462Z 2026-08-20  9:09:56 0 [Note] InnoDB: End of log at LSN=44894
-db-1       | 2026-08-20T09:09:56.621852715Z 2026-08-20  9:09:56 0 [Note] InnoDB: 128 rollback segments are active.
-db-1       | 2026-08-20T09:09:56.622867153Z 2026-08-20  9:09:56 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
-db-1       | 2026-08-20T09:09:56.623079385Z 2026-08-20  9:09:56 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
-db-1       | 2026-08-20T09:09:56.632197839Z 2026-08-20  9:09:56 0 [Note] InnoDB: log sequence number 44894; transaction id 14
-db-1       | 2026-08-20T09:09:56.632470159Z 2026-08-20  9:09:56 0 [Note] Plugin 'FEEDBACK' is disabled.
-db-1       | 2026-08-20T09:09:56.656236268Z 2026-08-20  9:09:56 0 [Note] mariadbd: ready for connections.
-db-1       | 2026-08-20T09:09:56.656316184Z Version: '10.11.18-MariaDB-ubu2204'  socket: '/run/mysqld/mysqld.sock'  port: 0  mariadb.org binary distribution
-db-1       | 2026-08-20T09:09:57.465320059Z 2026-08-20 09:09:57+00:00 [Note] [Entrypoint]: Temporary server started.
-db-1       | 2026-08-20T09:10:02.500995537Z 2026-08-20 09:10:02+00:00 [Note] [Entrypoint]: Creating database example
-db-1       | 2026-08-20T09:10:02.506848259Z 2026-08-20 09:10:02+00:00 [Note] [Entrypoint]: Securing system users (equivalent to running mysql_secure_installation)
-db-1       | 2026-08-20T09:10:02.552869769Z 
-db-1       | 2026-08-20T09:10:02.558966091Z 2026-08-20 09:10:02+00:00 [Note] [Entrypoint]: Stopping temporary server
-db-1       | 2026-08-20T09:10:02.559276369Z 2026-08-20  9:10:02 0 [Note] mariadbd (initiated by: unknown): Normal shutdown
-db-1       | 2026-08-20T09:10:02.559893577Z 2026-08-20  9:10:02 0 [Note] InnoDB: FTS optimize thread exiting.
-db-1       | 2026-08-20T09:10:02.605827930Z 2026-08-20  9:10:02 0 [Note] InnoDB: Starting shutdown...
-db-1       | 2026-08-20T09:10:02.606067754Z 2026-08-20  9:10:02 0 [Note] InnoDB: Dumping buffer pool(s) to /var/lib/mysql/ib_buffer_pool
-db-1       | 2026-08-20T09:10:02.607055224Z 2026-08-20  9:10:02 0 [Note] InnoDB: Buffer pool(s) dump completed at 260820  9:10:02
-db-1       | 2026-08-20T09:10:02.660099240Z 2026-08-20  9:10:02 0 [Note] InnoDB: Removed temporary tablespace data file: "./ibtmp1"
-db-1       | 2026-08-20T09:10:02.660160799Z 2026-08-20  9:10:02 0 [Note] Shutdown completed; log sequence number 44894; transaction id 15
-db-1       | 2026-08-20T09:10:02.683066021Z 2026-08-20  9:10:02 0 [Note] mariadbd: Shutdown complete
-db-1       | 2026-08-20T09:10:02.711680840Z 2026-08-20 09:10:02+00:00 [Note] [Entrypoint]: Temporary server stopped
-db-1       | 2026-08-20T09:10:02.711756449Z 
-db-1       | 2026-08-20T09:10:02.719438395Z 2026-08-20 09:10:02+00:00 [Note] [Entrypoint]: MariaDB init process done. Ready for start up.
-db-1       | 2026-08-20T09:10:02.719498868Z 
-db-1       | 2026-08-20T09:10:02.788167845Z 2026-08-20  9:10:02 0 [Note] Starting MariaDB 10.11.18-MariaDB-ubu2204 source revision 197f92bee02d8e836f529f37625be69b83e7acbd server_uid 2Cxf39QKVykO/fYSTLeqWM5Khl0= as process 1
-db-1       | 2026-08-20T09:10:02.912224974Z 2026-08-20  9:10:02 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
-db-1       | 2026-08-20T09:10:02.923167973Z 2026-08-20  9:10:02 0 [Note] InnoDB: Number of transaction pools: 1
-db-1       | 2026-08-20T09:10:02.923218230Z 2026-08-20  9:10:02 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
-db-1       | 2026-08-20T09:10:02.923264956Z 2026-08-20  9:10:02 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
-db-1       | 2026-08-20T09:10:02.923857949Z 2026-08-20  9:10:02 0 [Warning] mariadbd: io_uring_queue_init() failed with EPERM: sysctl kernel.io_uring_disabled has the value 2, or 1 and the user of the process is not a member of sysctl kernel.io_uring_group. (see man 2 io_uring_setup).
-db-1       | 2026-08-20T09:10:02.924091391Z create_uring failed: falling back to libaio
-db-1       | 2026-08-20T09:10:02.924588376Z 2026-08-20  9:10:02 0 [Note] InnoDB: Using Linux native AIO
-db-1       | 2026-08-20T09:10:02.928136807Z 2026-08-20  9:10:02 0 [Note] InnoDB: innodb_buffer_pool_size_max=8388608m, innodb_buffer_pool_size=128m
-db-1       | 2026-08-20T09:10:02.933230188Z 2026-08-20  9:10:02 0 [Note] InnoDB: Completed initialization of buffer pool
-db-1       | 2026-08-20T09:10:02.937485546Z 2026-08-20  9:10:02 0 [Note] InnoDB: File system buffers for log disabled (block size=512 bytes)
-db-1       | 2026-08-20T09:10:03.022431860Z 2026-08-20  9:10:03 0 [Note] InnoDB: End of log at LSN=44894
-db-1       | 2026-08-20T09:10:03.053798433Z 2026-08-20  9:10:03 0 [Note] InnoDB: 128 rollback segments are active.
-db-1       | 2026-08-20T09:10:03.054237980Z 2026-08-20  9:10:03 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
-db-1       | 2026-08-20T09:10:03.054260973Z 2026-08-20  9:10:03 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
-db-1       | 2026-08-20T09:10:03.057002107Z 2026-08-20  9:10:03 0 [Note] InnoDB: log sequence number 44894; transaction id 14
-db-1       | 2026-08-20T09:10:03.057199936Z 2026-08-20  9:10:03 0 [Note] Plugin 'FEEDBACK' is disabled.
-db-1       | 2026-08-20T09:10:03.057269779Z 2026-08-20  9:10:03 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
-db-1       | 2026-08-20T09:10:03.058916084Z 2026-08-20  9:10:03 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
-db-1       | 2026-08-20T09:10:03.058942391Z 2026-08-20  9:10:03 0 [Note] InnoDB: Buffer pool(s) load completed at 260820  9:10:03
-db-1       | 2026-08-20T09:10:03.062795914Z 2026-08-20  9:10:03 0 [Note] Server socket created on IP: '0.0.0.0', port: '3306'.
-db-1       | 2026-08-20T09:10:03.062826270Z 2026-08-20  9:10:03 0 [Note] Server socket created on IP: '::', port: '3306'.
-db-1       | 2026-08-20T09:10:03.073500881Z 2026-08-20  9:10:03 0 [Note] mariadbd: ready for connections.
-db-1       | 2026-08-20T09:10:03.073522468Z Version: '10.11.18-MariaDB-ubu2204'  socket: '/run/mysqld/mysqld.sock'  port: 3306  mariadb.org binary distribution
-backend-1  | 2026-08-21T16:55:20.486754056Z 172.19.0.3 - - [21/Aug/2026:16:55:20 +0000] "GET / HTTP/1.1" 200 132 "-" "ansible-httpget"
-proxy-1    | 2026-08-21T16:55:07.692816497Z /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
-proxy-1    | 2026-08-21T16:55:07.692902665Z /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
-proxy-1    | 2026-08-21T16:55:07.696662594Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
-proxy-1    | 2026-08-21T16:55:07.701859656Z 10-listen-on-ipv6-by-default.sh: info: /etc/nginx/conf.d/default.conf is not a file or does not exist
-proxy-1    | 2026-08-21T16:55:07.703090155Z /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
-proxy-1    | 2026-08-21T16:55:07.704395816Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
-proxy-1    | 2026-08-21T16:55:07.717027619Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
-proxy-1    | 2026-08-21T16:55:07.722644636Z /docker-entrypoint.sh: Configuration complete; ready for start up
-proxy-1    | 2026-08-21T16:55:07.756088306Z 2026/08/21 16:55:07 [notice] 8#8: using the "epoll" event method
-proxy-1    | 2026-08-21T16:55:07.756158152Z 2026/08/21 16:55:07 [notice] 8#8: nginx/1.30.4
-proxy-1    | 2026-08-21T16:55:07.756180312Z 2026/08/21 16:55:07 [notice] 8#8: built by gcc 15.2.0 (Alpine 15.2.0) 
-proxy-1    | 2026-08-21T16:55:07.756200578Z 2026/08/21 16:55:07 [notice] 8#8: OS: Linux 5.15.0-187-generic
-proxy-1    | 2026-08-21T16:55:07.756220613Z 2026/08/21 16:55:07 [notice] 8#8: getrlimit(RLIMIT_NOFILE): 1024:524288
-proxy-1    | 2026-08-21T16:55:07.756849126Z 2026/08/21 16:55:07 [notice] 8#8: start worker processes
-proxy-1    | 2026-08-21T16:55:07.757341871Z 2026/08/21 16:55:07 [notice] 8#8: start worker process 22
-proxy-1    | 2026-08-21T16:55:07.758008646Z 2026/08/21 16:55:07 [notice] 8#8: start worker process 23
-proxy-1    | 2026-08-21T16:55:07.758583680Z 2026/08/21 16:55:07 [notice] 8#8: start worker process 24
-proxy-1    | 2026-08-21T16:55:07.759177563Z 2026/08/21 16:55:07 [notice] 8#8: start worker process 25
-proxy-1    | 2026-08-21T16:55:16.883674979Z 2026/08/21 16:55:16 [notice] 8#8: signal 1 (SIGHUP) received from 40, reconfiguring
-proxy-1    | 2026-08-21T16:55:16.883714362Z 2026/08/21 16:55:16 [notice] 8#8: reconfiguring
-proxy-1    | 2026-08-21T16:55:16.888095573Z 2026/08/21 16:55:16 [notice] 8#8: using the "epoll" event method
-proxy-1    | 2026-08-21T16:55:16.888123823Z 2026/08/21 16:55:16 [notice] 8#8: start worker processes
-proxy-1    | 2026-08-21T16:55:16.888134889Z 2026/08/21 16:55:16 [notice] 8#8: start worker process 46
-proxy-1    | 2026-08-21T16:55:16.890390717Z 2026/08/21 16:55:16 [notice] 8#8: start worker process 47
-proxy-1    | 2026-08-21T16:55:16.890921007Z 2026/08/21 16:55:16 [notice] 8#8: start worker process 48
-proxy-1    | 2026-08-21T16:55:16.891564683Z 2026/08/21 16:55:16 [notice] 8#8: start worker process 49
-proxy-1    | 2026-08-21T16:55:16.997763909Z 2026/08/21 16:55:16 [notice] 24#24: gracefully shutting down
-proxy-1    | 2026-08-21T16:55:16.997840894Z 2026/08/21 16:55:16 [notice] 22#22: gracefully shutting down
-proxy-1    | 2026-08-21T16:55:16.997860752Z 2026/08/21 16:55:16 [notice] 23#23: gracefully shutting down
-proxy-1    | 2026-08-21T16:55:16.997877089Z 2026/08/21 16:55:16 [notice] 25#25: gracefully shutting down
-proxy-1    | 2026-08-21T16:55:16.997927867Z 2026/08/21 16:55:16 [notice] 22#22: exiting
-proxy-1    | 2026-08-21T16:55:16.997945617Z 2026/08/21 16:55:16 [notice] 24#24: exiting
-proxy-1    | 2026-08-21T16:55:16.997961466Z 2026/08/21 16:55:16 [notice] 23#23: exiting
-proxy-1    | 2026-08-21T16:55:16.997977239Z 2026/08/21 16:55:16 [notice] 25#25: exiting
-proxy-1    | 2026-08-21T16:55:16.997992848Z 2026/08/21 16:55:16 [notice] 22#22: exit
-proxy-1    | 2026-08-21T16:55:16.998008416Z 2026/08/21 16:55:16 [notice] 23#23: exit
-proxy-1    | 2026-08-21T16:55:16.998023982Z 2026/08/21 16:55:16 [notice] 24#24: exit
-proxy-1    | 2026-08-21T16:55:16.998039555Z 2026/08/21 16:55:16 [notice] 25#25: exit
-proxy-1    | 2026-08-21T16:55:17.032151539Z 2026/08/21 16:55:17 [notice] 8#8: signal 17 (SIGCHLD) received from 24
-proxy-1    | 2026-08-21T16:55:17.032205436Z 2026/08/21 16:55:17 [notice] 8#8: worker process 22 exited with code 0
-proxy-1    | 2026-08-21T16:55:17.032228411Z 2026/08/21 16:55:17 [notice] 8#8: worker process 23 exited with code 0
-proxy-1    | 2026-08-21T16:55:17.032249005Z 2026/08/21 16:55:17 [notice] 8#8: worker process 24 exited with code 0
-proxy-1    | 2026-08-21T16:55:17.032458291Z 2026/08/21 16:55:17 [notice] 8#8: signal 29 (SIGIO) received
-proxy-1    | 2026-08-21T16:55:17.032489877Z 2026/08/21 16:55:17 [notice] 8#8: signal 17 (SIGCHLD) received from 22
-proxy-1    | 2026-08-21T16:55:17.040011861Z 2026/08/21 16:55:17 [notice] 8#8: signal 17 (SIGCHLD) received from 25
-proxy-1    | 2026-08-21T16:55:17.040072173Z 2026/08/21 16:55:17 [notice] 8#8: worker process 25 exited with code 0
-proxy-1    | 2026-08-21T16:55:17.040320487Z 2026/08/21 16:55:17 [notice] 8#8: signal 29 (SIGIO) received
-proxy-1    | 2026-08-21T16:55:19.260323479Z 172.19.0.1 - - [21/Aug/2026:16:55:19 +0000] "GET / HTTP/1.1" 301 162 "-" "ansible-httpget" "-"
-proxy-1    | 2026-08-21T16:55:20.486764392Z 172.19.0.1 - - [21/Aug/2026:16:55:20 +0000] "GET / HTTP/1.1" 200 132 "-" "ansible-httpget" "-"
+proxy-1  | 2026-08-23T23:20:00.328325689Z /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+proxy-1  | 2026-08-23T23:20:00.328354211Z /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+proxy-1  | 2026-08-23T23:20:00.328356244Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+proxy-1  | 2026-08-23T23:20:00.328357552Z 10-listen-on-ipv6-by-default.sh: info: /etc/nginx/conf.d/default.conf is not a file or does not exist
+proxy-1  | 2026-08-23T23:20:00.328358831Z /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+proxy-1  | 2026-08-23T23:20:00.328359937Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+proxy-1  | 2026-08-23T23:20:00.339746132Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+proxy-1  | 2026-08-23T23:20:00.340404940Z /docker-entrypoint.sh: Configuration complete; ready for start up
+proxy-1  | 2026-08-23T23:20:00.348361144Z 2026/08/23 23:20:00 [notice] 6#6: using the "epoll" event method
+proxy-1  | 2026-08-23T23:20:00.348412717Z 2026/08/23 23:20:00 [notice] 6#6: nginx/1.30.4
+proxy-1  | 2026-08-23T23:20:00.348425193Z 2026/08/23 23:20:00 [notice] 6#6: built by gcc 15.2.0 (Alpine 15.2.0) 
+proxy-1  | 2026-08-23T23:20:00.348435469Z 2026/08/23 23:20:00 [notice] 6#6: OS: Linux 5.15.0-190-generic
+proxy-1  | 2026-08-23T23:20:00.348444690Z 2026/08/23 23:20:00 [notice] 6#6: getrlimit(RLIMIT_NOFILE): 1024:524288
+proxy-1  | 2026-08-23T23:20:00.348523977Z 2026/08/23 23:20:00 [notice] 6#6: start worker processes
+proxy-1  | 2026-08-23T23:20:00.348617964Z 2026/08/23 23:20:00 [notice] 6#6: start worker process 20
+proxy-1  | 2026-08-23T23:20:07.049331849Z 2026/08/23 23:20:07 [notice] 6#6: signal 1 (SIGHUP) received from 33, reconfiguring
+proxy-1  | 2026-08-23T23:20:07.049582927Z 2026/08/23 23:20:07 [notice] 6#6: reconfiguring
+proxy-1  | 2026-08-23T23:20:07.052666340Z 2026/08/23 23:20:07 [notice] 6#6: using the "epoll" event method
+proxy-1  | 2026-08-23T23:20:07.053043669Z 2026/08/23 23:20:07 [notice] 6#6: start worker processes
+proxy-1  | 2026-08-23T23:20:07.053372728Z 2026/08/23 23:20:07 [notice] 6#6: start worker process 38
+proxy-1  | 2026-08-23T23:20:07.154120375Z 2026/08/23 23:20:07 [notice] 20#20: gracefully shutting down
+proxy-1  | 2026-08-23T23:20:07.154317952Z 2026/08/23 23:20:07 [notice] 20#20: exiting
+proxy-1  | 2026-08-23T23:20:07.154637528Z 2026/08/23 23:20:07 [notice] 20#20: exit
+proxy-1  | 2026-08-23T23:20:07.172626101Z 2026/08/23 23:20:07 [notice] 6#6: signal 17 (SIGCHLD) received from 20
+proxy-1  | 2026-08-23T23:20:07.173425992Z 2026/08/23 23:20:07 [notice] 6#6: worker process 20 exited with code 0
+proxy-1  | 2026-08-23T23:20:07.174135880Z 2026/08/23 23:20:07 [notice] 6#6: signal 29 (SIGIO) received
+proxy-1  | 2026-08-23T23:20:07.899833433Z 172.22.0.1 - - [23/Aug/2026:23:20:07 +0000] "GET / HTTP/1.1" 301 162 "-" "ansible-httpget" "-"
+proxy-1  | 2026-08-23T23:20:08.276493669Z 172.22.0.1 - - [23/Aug/2026:23:20:08 +0000] "GET / HTTP/1.1" 200 132 "-" "ansible-httpget" "-"
+proxy-1  | 2026-08-23T23:20:10.871655268Z 172.22.0.1 - - [23/Aug/2026:23:20:10 +0000] "GET / HTTP/1.1" 301 162 "-" "ansible-httpget" "-"
+proxy-1  | 2026-08-23T23:20:11.272798689Z 172.22.0.1 - - [23/Aug/2026:23:20:11 +0000] "GET / HTTP/1.1" 200 132 "-" "ansible-httpget" "-"
+proxy-1  | 2026-08-23T23:20:11.483942232Z 172.20.10.2 - - [23/Aug/2026:23:20:11 +0000] "HEAD / HTTP/1.1" 301 0 "-" "curl/7.81.0" "-"
+proxy-1  | 2026-08-23T23:20:11.709633402Z 172.20.10.2 - - [23/Aug/2026:23:20:11 +0000] "GET / HTTP/1.1" 200 132 "-" "curl/7.81.0" "-"
+proxy-1  | 2026-08-23T23:20:11.883893967Z 172.20.10.2 - - [23/Aug/2026:23:20:11 +0000] "GET / HTTP/1.1" 301 162 "-" "curl/7.81.0" "-"
+proxy-1  | 2026-08-23T23:20:11.894041043Z 172.20.10.2 - - [23/Aug/2026:23:20:11 +0000] "GET / HTTP/1.1" 200 132 "-" "curl/7.81.0" "-"
+proxy-1  | 2026-08-23T23:21:24.174702587Z 172.22.0.1 - - [23/Aug/2026:23:21:24 +0000] "GET / HTTP/1.1" 301 162 "-" "ansible-httpget" "-"
+proxy-1  | 2026-08-23T23:21:24.577926174Z 172.22.0.1 - - [23/Aug/2026:23:21:24 +0000] "GET / HTTP/1.1" 200 132 "-" "ansible-httpget" "-"
+proxy-1  | 2026-08-23T23:21:24.772139978Z 172.20.10.2 - - [23/Aug/2026:23:21:24 +0000] "HEAD / HTTP/1.1" 301 0 "-" "curl/7.81.0" "-"
+proxy-1  | 2026-08-23T23:21:24.948619900Z 172.20.10.2 - - [23/Aug/2026:23:21:24 +0000] "GET / HTTP/1.1" 200 132 "-" "curl/7.81.0" "-"
+proxy-1  | 2026-08-23T23:21:25.121612959Z 172.20.10.2 - - [23/Aug/2026:23:21:25 +0000] "GET / HTTP/1.1" 301 162 "-" "curl/7.81.0" "-"
+proxy-1  | 2026-08-23T23:21:25.133077521Z 172.20.10.2 - - [23/Aug/2026:23:21:25 +0000] "GET / HTTP/1.1" 200 132 "-" "curl/7.81.0" "-"
+proxy-1  | 2026-08-23T23:22:44.920293077Z 172.22.0.1 - - [23/Aug/2026:23:22:44 +0000] "GET / HTTP/1.1" 200 132 "-" "curl/7.81.0" "-"
+proxy-1  | 2026-08-24T11:41:34.407174547Z /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+proxy-1  | 2026-08-24T11:41:34.427484289Z /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+proxy-1  | 2026-08-24T11:41:34.427544203Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+proxy-1  | 2026-08-24T11:41:34.427546900Z 10-listen-on-ipv6-by-default.sh: info: /etc/nginx/conf.d/default.conf is not a file or does not exist
+proxy-1  | 2026-08-24T11:41:34.427548357Z /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+proxy-1  | 2026-08-24T11:41:34.427549604Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+proxy-1  | 2026-08-24T11:41:34.442030167Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+proxy-1  | 2026-08-24T11:41:34.453261084Z /docker-entrypoint.sh: Configuration complete; ready for start up
+proxy-1  | 2026-08-24T12:13:11.842390004Z 2026/08/24 11:41:34 [notice] 7#7: using the "epoll" event method
+proxy-1  | 2026-08-24T12:13:11.842422339Z 2026/08/24 11:41:34 [notice] 7#7: nginx/1.30.4
+proxy-1  | 2026-08-24T12:13:11.842424200Z 2026/08/24 11:41:34 [notice] 7#7: built by gcc 15.2.0 (Alpine 15.2.0) 
+proxy-1  | 2026-08-24T12:13:11.842425503Z 2026/08/24 11:41:34 [notice] 7#7: OS: Linux 5.15.0-190-generic
+proxy-1  | 2026-08-24T12:13:11.842426830Z 2026/08/24 11:41:34 [notice] 7#7: getrlimit(RLIMIT_NOFILE): 1024:524288
+proxy-1  | 2026-08-24T12:13:11.851297497Z 2026/08/24 11:41:34 [notice] 7#7: start worker processes
+proxy-1  | 2026-08-24T12:13:11.851318742Z 2026/08/24 11:41:34 [notice] 7#7: start worker process 21
+proxy-1  | 2026-08-24T14:42:28.561483096Z 172.22.0.1 - - [24/Aug/2026:14:42:28 +0000] "GET / HTTP/1.1" 301 162 "-" "ansible-httpget" "-"
+proxy-1  | 2026-08-24T14:42:29.115434971Z 172.22.0.1 - - [24/Aug/2026:14:42:29 +0000] "GET / HTTP/1.1" 200 132 "-" "ansible-httpget" "-"
+proxy-1  | 2026-08-24T14:42:31.811063058Z 172.22.0.1 - - [24/Aug/2026:14:42:31 +0000] "GET / HTTP/1.1" 301 162 "-" "ansible-httpget" "-"
+proxy-1  | 2026-08-24T14:42:32.151050311Z 172.22.0.1 - - [24/Aug/2026:14:42:32 +0000] "GET / HTTP/1.1" 200 132 "-" "ansible-httpget" "-"
+proxy-1  | 2026-08-24T14:42:32.482726814Z 172.20.10.2 - - [24/Aug/2026:14:42:32 +0000] "HEAD / HTTP/1.1" 301 0 "-" "curl/7.81.0" "-"
+proxy-1  | 2026-08-24T14:42:32.791384525Z 172.20.10.2 - - [24/Aug/2026:14:42:32 +0000] "GET / HTTP/1.1" 200 132 "-" "curl/7.81.0" "-"
+proxy-1  | 2026-08-24T14:42:32.998054229Z 172.20.10.2 - - [24/Aug/2026:14:42:32 +0000] "GET / HTTP/1.1" 301 162 "-" "curl/7.81.0" "-"
+proxy-1  | 2026-08-24T14:42:33.018184661Z 172.20.10.2 - - [24/Aug/2026:14:42:33 +0000] "GET / HTTP/1.1" 200 132 "-" "curl/7.81.0" "-"
+proxy-1  | 2026-08-24T14:46:51.188376994Z /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+proxy-1  | 2026-08-24T14:46:51.189710436Z /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+proxy-1  | 2026-08-24T14:46:51.189718704Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+proxy-1  | 2026-08-24T14:46:51.199719154Z 10-listen-on-ipv6-by-default.sh: info: /etc/nginx/conf.d/default.conf is not a file or does not exist
+proxy-1  | 2026-08-24T14:46:51.199751256Z /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+proxy-1  | 2026-08-24T14:46:51.199753053Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+proxy-1  | 2026-08-24T14:46:51.211988437Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+proxy-1  | 2026-08-24T14:46:51.213933896Z /docker-entrypoint.sh: Configuration complete; ready for start up
+proxy-1  | 2026-08-24T14:46:51.253485911Z 2026/08/24 14:46:51 [notice] 7#7: using the "epoll" event method
+proxy-1  | 2026-08-24T14:46:51.253523853Z 2026/08/24 14:46:51 [notice] 7#7: nginx/1.30.4
+proxy-1  | 2026-08-24T14:46:51.253525797Z 2026/08/24 14:46:51 [notice] 7#7: built by gcc 15.2.0 (Alpine 15.2.0) 
+proxy-1  | 2026-08-24T14:46:51.253527190Z 2026/08/24 14:46:51 [notice] 7#7: OS: Linux 5.15.0-190-generic
+proxy-1  | 2026-08-24T14:46:51.253528495Z 2026/08/24 14:46:51 [notice] 7#7: getrlimit(RLIMIT_NOFILE): 1024:524288
+proxy-1  | 2026-08-24T14:46:51.257568957Z 2026/08/24 14:46:51 [notice] 7#7: start worker processes
+proxy-1  | 2026-08-24T14:46:51.257584926Z 2026/08/24 14:46:51 [notice] 7#7: start worker process 21
+proxy-1  | 2026-08-24T14:55:09.676117974Z 172.22.0.1 - - [24/Aug/2026:14:55:09 +0000] "GET / HTTP/1.1" 301 162 "-" "ansible-httpget" "-"
+proxy-1  | 2026-08-24T14:55:10.019214439Z 172.22.0.1 - - [24/Aug/2026:14:55:10 +0000] "GET / HTTP/1.1" 200 132 "-" "ansible-httpget" "-"
+backend-1  | 2026-08-24T14:29:33.132467438Z 127.0.0.1 - - [24/Aug/2026:14:29:33 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:29:45.153884807Z 127.0.0.1 - - [24/Aug/2026:14:29:45 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:29:57.906476442Z 127.0.0.1 - - [24/Aug/2026:14:29:57 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:30:10.437497392Z 127.0.0.1 - - [24/Aug/2026:14:30:10 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:30:22.735504644Z 127.0.0.1 - - [24/Aug/2026:14:30:22 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:30:35.283259487Z 127.0.0.1 - - [24/Aug/2026:14:30:35 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:30:48.076414592Z 127.0.0.1 - - [24/Aug/2026:14:30:48 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:31:00.493053834Z 127.0.0.1 - - [24/Aug/2026:14:31:00 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:31:11.338617017Z 127.0.0.1 - - [24/Aug/2026:14:31:11 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:31:21.819091725Z 127.0.0.1 - - [24/Aug/2026:14:31:21 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:31:32.246947507Z 127.0.0.1 - - [24/Aug/2026:14:31:32 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:31:42.675270757Z 127.0.0.1 - - [24/Aug/2026:14:31:42 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:31:53.134033605Z 127.0.0.1 - - [24/Aug/2026:14:31:53 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:32:03.746200041Z 127.0.0.1 - - [24/Aug/2026:14:32:03 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:32:14.405279325Z 127.0.0.1 - - [24/Aug/2026:14:32:14 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:32:24.892419953Z 127.0.0.1 - - [24/Aug/2026:14:32:24 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:32:35.443556385Z 127.0.0.1 - - [24/Aug/2026:14:32:35 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:32:46.021517791Z 127.0.0.1 - - [24/Aug/2026:14:32:46 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:32:56.606079571Z 127.0.0.1 - - [24/Aug/2026:14:32:56 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:33:07.220693873Z 127.0.0.1 - - [24/Aug/2026:14:33:07 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:33:17.815595329Z 127.0.0.1 - - [24/Aug/2026:14:33:17 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:33:28.365641786Z 127.0.0.1 - - [24/Aug/2026:14:33:28 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:33:38.933639063Z 127.0.0.1 - - [24/Aug/2026:14:33:38 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:33:49.526534999Z 127.0.0.1 - - [24/Aug/2026:14:33:49 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:34:00.110277042Z 127.0.0.1 - - [24/Aug/2026:14:34:00 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:34:10.693843380Z 127.0.0.1 - - [24/Aug/2026:14:34:10 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:34:21.428654865Z 127.0.0.1 - - [24/Aug/2026:14:34:21 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:34:32.037992953Z 127.0.0.1 - - [24/Aug/2026:14:34:32 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:34:42.572226285Z 127.0.0.1 - - [24/Aug/2026:14:34:42 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:34:53.137908145Z 127.0.0.1 - - [24/Aug/2026:14:34:53 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:35:03.657180245Z 127.0.0.1 - - [24/Aug/2026:14:35:03 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:35:14.161941264Z 127.0.0.1 - - [24/Aug/2026:14:35:14 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:35:24.754945919Z 127.0.0.1 - - [24/Aug/2026:14:35:24 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:35:35.313675051Z 127.0.0.1 - - [24/Aug/2026:14:35:35 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:35:45.849658333Z 127.0.0.1 - - [24/Aug/2026:14:35:45 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:35:56.345788563Z 127.0.0.1 - - [24/Aug/2026:14:35:56 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:36:06.916118005Z 127.0.0.1 - - [24/Aug/2026:14:36:06 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:36:17.561591451Z 127.0.0.1 - - [24/Aug/2026:14:36:17 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:36:28.186227336Z 127.0.0.1 - - [24/Aug/2026:14:36:28 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:36:38.902438432Z 127.0.0.1 - - [24/Aug/2026:14:36:38 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:36:49.630214205Z 127.0.0.1 - - [24/Aug/2026:14:36:49 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:37:00.196014935Z 127.0.0.1 - - [24/Aug/2026:14:37:00 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:37:10.739889645Z 127.0.0.1 - - [24/Aug/2026:14:37:10 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:37:21.290394561Z 127.0.0.1 - - [24/Aug/2026:14:37:21 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:37:31.759298377Z 127.0.0.1 - - [24/Aug/2026:14:37:31 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:37:43.095215113Z 127.0.0.1 - - [24/Aug/2026:14:37:43 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:37:53.791407428Z 127.0.0.1 - - [24/Aug/2026:14:37:53 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:38:04.373518105Z 127.0.0.1 - - [24/Aug/2026:14:38:04 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:38:14.904613353Z 127.0.0.1 - - [24/Aug/2026:14:38:14 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:38:25.469667380Z 127.0.0.1 - - [24/Aug/2026:14:38:25 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:38:36.189216875Z 127.0.0.1 - - [24/Aug/2026:14:38:36 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:38:46.715862409Z 127.0.0.1 - - [24/Aug/2026:14:38:46 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:38:57.370961075Z 127.0.0.1 - - [24/Aug/2026:14:38:57 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:39:08.234793710Z 127.0.0.1 - - [24/Aug/2026:14:39:08 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:39:18.928456592Z 127.0.0.1 - - [24/Aug/2026:14:39:18 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:39:30.609974236Z 127.0.0.1 - - [24/Aug/2026:14:39:30 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:39:41.950887587Z 127.0.0.1 - - [24/Aug/2026:14:39:41 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:42:09.894540830Z 127.0.0.1 - - [24/Aug/2026:14:42:09 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:42:11.824846811Z 127.0.0.1 - - [24/Aug/2026:14:42:11 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:42:20.738115781Z 127.0.0.1 - - [24/Aug/2026:14:42:20 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:42:29.115370890Z 172.22.0.2 - - [24/Aug/2026:14:42:29 +0000] "GET / HTTP/1.1" 200 132 "-" "ansible-httpget"
+backend-1  | 2026-08-24T14:42:31.449953934Z 127.0.0.1 - - [24/Aug/2026:14:42:31 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:42:32.138676541Z 172.22.0.2 - - [24/Aug/2026:14:42:32 +0000] "GET / HTTP/1.1" 200 132 "-" "ansible-httpget"
+backend-1  | 2026-08-24T14:42:32.790668863Z 172.22.0.2 - - [24/Aug/2026:14:42:32 +0000] "GET / HTTP/1.1" 200 132 "-" "curl/7.81.0"
+backend-1  | 2026-08-24T14:42:33.016650659Z 172.22.0.2 - - [24/Aug/2026:14:42:33 +0000] "GET / HTTP/1.1" 200 132 "-" "curl/7.81.0"
+backend-1  | 2026-08-24T14:42:41.992369568Z 127.0.0.1 - - [24/Aug/2026:14:42:41 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:42:52.317872357Z 127.0.0.1 - - [24/Aug/2026:14:42:52 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:43:02.802525051Z 127.0.0.1 - - [24/Aug/2026:14:43:02 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:43:13.115795329Z 127.0.0.1 - - [24/Aug/2026:14:43:13 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:43:23.512888617Z 127.0.0.1 - - [24/Aug/2026:14:43:23 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:43:33.859531509Z 127.0.0.1 - - [24/Aug/2026:14:43:33 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:46:41.939471359Z 127.0.0.1 - - [24/Aug/2026:14:46:41 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:46:52.607264852Z 127.0.0.1 - - [24/Aug/2026:14:46:52 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:47:03.438670085Z 127.0.0.1 - - [24/Aug/2026:14:47:03 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:47:13.983721796Z 127.0.0.1 - - [24/Aug/2026:14:47:13 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:47:24.528456797Z 127.0.0.1 - - [24/Aug/2026:14:47:24 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:47:35.186657686Z 127.0.0.1 - - [24/Aug/2026:14:47:35 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:47:45.678805555Z 127.0.0.1 - - [24/Aug/2026:14:47:45 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:47:56.250909173Z 127.0.0.1 - - [24/Aug/2026:14:47:56 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:48:07.485535251Z 127.0.0.1 - - [24/Aug/2026:14:48:07 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:48:18.299078586Z 127.0.0.1 - - [24/Aug/2026:14:48:18 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:48:29.495165508Z 127.0.0.1 - - [24/Aug/2026:14:48:29 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:53:00.443178638Z [2026-08-24 14:53:00 +0000] [7] [INFO] Starting gunicorn 23.0.0
+backend-1  | 2026-08-24T14:53:00.472319827Z [2026-08-24 14:53:00 +0000] [7] [INFO] Listening at: http://0.0.0.0:8000 (7)
+backend-1  | 2026-08-24T14:53:00.472980714Z [2026-08-24 14:53:00 +0000] [7] [INFO] Using worker: sync
+backend-1  | 2026-08-24T14:53:00.477040747Z [2026-08-24 14:53:00 +0000] [8] [INFO] Booting worker with pid: 8
+backend-1  | 2026-08-24T14:53:03.723832167Z 127.0.0.1 - - [24/Aug/2026:14:53:03 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:53:14.216237777Z 127.0.0.1 - - [24/Aug/2026:14:53:14 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:53:24.756246224Z 127.0.0.1 - - [24/Aug/2026:14:53:24 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:53:35.265846653Z 127.0.0.1 - - [24/Aug/2026:14:53:35 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:53:45.901567427Z 127.0.0.1 - - [24/Aug/2026:14:53:45 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:53:56.596116199Z 127.0.0.1 - - [24/Aug/2026:14:53:56 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:54:07.171538323Z 127.0.0.1 - - [24/Aug/2026:14:54:07 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:54:17.693492917Z 127.0.0.1 - - [24/Aug/2026:14:54:17 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:54:28.179101828Z 127.0.0.1 - - [24/Aug/2026:14:54:28 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:54:38.774498945Z 127.0.0.1 - - [24/Aug/2026:14:54:38 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:54:50.063330669Z 127.0.0.1 - - [24/Aug/2026:14:54:50 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:54:53.344825180Z 127.0.0.1 - - [24/Aug/2026:14:54:53 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:55:00.627393828Z 127.0.0.1 - - [24/Aug/2026:14:55:00 +0000] "GET / HTTP/1.1" 200 132 "-" "Python-urllib/3.12"
+backend-1  | 2026-08-24T14:55:10.018805959Z 172.22.0.2 - - [24/Aug/2026:14:55:10 +0000] "GET / HTTP/1.1" 200 132 "-" "ansible-httpget"
+db-1       | 2026-08-23T22:41:21.733720084Z 2026-08-23 22:41:21 0 [Note] InnoDB: FTS optimize thread exiting.
+db-1       | 2026-08-23T22:41:21.771794844Z 2026-08-23 22:41:21 0 [Note] InnoDB: Starting shutdown...
+db-1       | 2026-08-23T22:41:21.771819573Z 2026-08-23 22:41:21 0 [Note] InnoDB: Dumping buffer pool(s) to /var/lib/mysql/ib_buffer_pool
+db-1       | 2026-08-23T22:41:21.771823359Z 2026-08-23 22:41:21 0 [Note] InnoDB: Buffer pool(s) dump completed at 260823 22:41:21
+db-1       | 2026-08-23T22:41:21.806845204Z 2026-08-23 22:41:21 0 [Note] InnoDB: Removed temporary tablespace data file: "./ibtmp1"
+db-1       | 2026-08-23T22:41:21.806901538Z 2026-08-23 22:41:21 0 [Note] Shutdown completed; log sequence number 44894; transaction id 15
+db-1       | 2026-08-23T22:41:21.816378336Z 2026-08-23 22:41:21 0 [Note] mariadbd: Shutdown complete
+db-1       | 2026-08-23T22:41:21.831050995Z 2026-08-23 22:41:21+00:00 [Note] [Entrypoint]: Temporary server stopped
+db-1       | 2026-08-23T22:41:21.831074871Z 
+db-1       | 2026-08-23T22:41:21.832428519Z 2026-08-23 22:41:21+00:00 [Note] [Entrypoint]: MariaDB init process done. Ready for start up.
+db-1       | 2026-08-23T22:41:21.832496275Z 
+db-1       | 2026-08-23T22:41:21.878799641Z 2026-08-23 22:41:21 0 [Note] Starting MariaDB 10.11.18-MariaDB-ubu2204 source revision 197f92bee02d8e836f529f37625be69b83e7acbd server_uid GXVZCed/cP3Tmwdi255ywl+q8oQ= as process 1
+db-1       | 2026-08-23T22:41:21.906390950Z 2026-08-23 22:41:21 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+db-1       | 2026-08-23T22:41:21.922332254Z 2026-08-23 22:41:21 0 [Note] InnoDB: Number of transaction pools: 1
+db-1       | 2026-08-23T22:41:21.923101111Z 2026-08-23 22:41:21 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+db-1       | 2026-08-23T22:41:21.923342825Z 2026-08-23 22:41:21 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
+db-1       | 2026-08-23T22:41:21.923561238Z 2026-08-23 22:41:21 0 [Warning] mariadbd: io_uring_queue_init() failed with EPERM: sysctl kernel.io_uring_disabled has the value 2, or 1 and the user of the process is not a member of sysctl kernel.io_uring_group. (see man 2 io_uring_setup).
+db-1       | 2026-08-23T22:41:21.923670003Z create_uring failed: falling back to libaio
+db-1       | 2026-08-23T22:41:21.923783942Z 2026-08-23 22:41:21 0 [Note] InnoDB: Using Linux native AIO
+db-1       | 2026-08-23T22:41:21.924133516Z 2026-08-23 22:41:21 0 [Note] InnoDB: innodb_buffer_pool_size_max=8388608m, innodb_buffer_pool_size=128m
+db-1       | 2026-08-23T22:41:21.924691916Z 2026-08-23 22:41:21 0 [Note] InnoDB: Completed initialization of buffer pool
+db-1       | 2026-08-23T22:41:21.925228997Z 2026-08-23 22:41:21 0 [Note] InnoDB: File system buffers for log disabled (block size=512 bytes)
+db-1       | 2026-08-23T22:41:21.942811257Z 2026-08-23 22:41:21 0 [Note] InnoDB: End of log at LSN=44894
+db-1       | 2026-08-23T22:41:22.012021968Z 2026-08-23 22:41:22 0 [Note] InnoDB: 128 rollback segments are active.
+db-1       | 2026-08-23T22:41:22.012041343Z 2026-08-23 22:41:22 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
+db-1       | 2026-08-23T22:41:22.012043165Z 2026-08-23 22:41:22 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
+db-1       | 2026-08-23T22:41:22.012554156Z 2026-08-23 22:41:22 0 [Note] InnoDB: log sequence number 44894; transaction id 14
+db-1       | 2026-08-23T22:41:22.013091374Z 2026-08-23 22:41:22 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+db-1       | 2026-08-23T22:41:22.013441720Z 2026-08-23 22:41:22 0 [Note] Plugin 'FEEDBACK' is disabled.
+db-1       | 2026-08-23T22:41:22.026335741Z 2026-08-23 22:41:22 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
+db-1       | 2026-08-23T22:41:22.026353254Z 2026-08-23 22:41:22 0 [Note] InnoDB: Buffer pool(s) load completed at 260823 22:41:22
+db-1       | 2026-08-23T22:41:22.028809873Z 2026-08-23 22:41:22 0 [Note] Server socket created on IP: '0.0.0.0', port: '3306'.
+db-1       | 2026-08-23T22:41:22.028820869Z 2026-08-23 22:41:22 0 [Note] Server socket created on IP: '::', port: '3306'.
+db-1       | 2026-08-23T22:41:22.049849693Z 2026-08-23 22:41:22 0 [Note] mariadbd: ready for connections.
+db-1       | 2026-08-23T22:41:22.049877069Z Version: '10.11.18-MariaDB-ubu2204'  socket: '/run/mysqld/mysqld.sock'  port: 3306  mariadb.org binary distribution
+db-1       | 2026-08-24T11:38:27.984761041Z 2026-08-24 11:38:20 7 [Warning] Aborted connection 7 to db: 'example' user: 'root' host: '172.18.0.3' (Got timeout reading communication packets)
+db-1       | 2026-08-24T11:41:33.739131014Z 2026-08-24 11:41:33+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.11.18+maria~ubu2204 started.
+db-1       | 2026-08-24T11:41:35.396128336Z 2026-08-24 11:41:35+00:00 [Warn] [Entrypoint]: /sys/fs/cgroup///memory.pressure not writable, functionality unavailable to MariaDB
+db-1       | 2026-08-24T11:41:35.403507498Z 2026-08-24 11:41:35+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+db-1       | 2026-08-24T11:41:35.455577665Z 2026-08-24 11:41:35+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.11.18+maria~ubu2204 started.
+db-1       | 2026-08-24T12:13:11.885065464Z 2026-08-24 12:13:11+00:00 [Note] [Entrypoint]: MariaDB upgrade not required
+db-1       | 2026-08-24T12:13:11.917022980Z 2026-08-24 12:13:11 0 [Note] Starting MariaDB 10.11.18-MariaDB-ubu2204 source revision 197f92bee02d8e836f529f37625be69b83e7acbd server_uid jAeh1+FNta1IQ9mskvSZs9Q7qrU= as process 1
+db-1       | 2026-08-24T12:13:12.383588455Z 2026-08-24 12:13:12 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+db-1       | 2026-08-24T12:13:12.395621781Z 2026-08-24 12:13:12 0 [Note] InnoDB: Number of transaction pools: 1
+db-1       | 2026-08-24T12:13:12.396716744Z 2026-08-24 12:13:12 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+db-1       | 2026-08-24T12:13:12.400403742Z 2026-08-24 12:13:12 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
+db-1       | 2026-08-24T12:13:12.407812130Z 2026-08-24 12:13:12 0 [Warning] mariadbd: io_uring_queue_init() failed with EPERM: sysctl kernel.io_uring_disabled has the value 2, or 1 and the user of the process is not a member of sysctl kernel.io_uring_group. (see man 2 io_uring_setup).
+db-1       | 2026-08-24T12:13:12.407825064Z create_uring failed: falling back to libaio
+db-1       | 2026-08-24T12:13:12.407826850Z 2026-08-24 12:13:12 0 [Note] InnoDB: Using Linux native AIO
+db-1       | 2026-08-24T12:13:12.414810600Z 2026-08-24 12:13:12 0 [Note] InnoDB: innodb_buffer_pool_size_max=8388608m, innodb_buffer_pool_size=128m
+db-1       | 2026-08-24T12:13:12.425870476Z 2026-08-24 12:13:12 0 [Note] InnoDB: Completed initialization of buffer pool
+db-1       | 2026-08-24T12:13:12.461813358Z 2026-08-24 12:13:12 0 [Note] InnoDB: File system buffers for log disabled (block size=512 bytes)
+db-1       | 2026-08-24T12:13:12.707350064Z 2026-08-24 12:13:12 0 [Note] InnoDB: Starting crash recovery from checkpoint LSN=44878
+db-1       | 2026-08-24T12:13:12.735513917Z 2026-08-24 12:13:12 0 [Note] InnoDB: End of log at LSN=48546
+db-1       | 2026-08-24T12:13:12.831990725Z 2026-08-24 12:13:12 0 [Note] InnoDB: To recover: 11 pages
+db-1       | 2026-08-24T12:13:12.835961860Z 2026-08-24 12:13:12 0 [Note] InnoDB: 128 rollback segments are active.
+db-1       | 2026-08-24T12:13:12.836330409Z 2026-08-24 12:13:12 0 [Note] InnoDB: Removed temporary tablespace data file: "./ibtmp1"
+db-1       | 2026-08-24T12:13:12.836395106Z 2026-08-24 12:13:12 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
+db-1       | 2026-08-24T12:13:12.836429405Z 2026-08-24 12:13:12 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
+db-1       | 2026-08-24T12:13:12.857900429Z 2026-08-24 12:13:12 0 [Note] InnoDB: log sequence number 48546; transaction id 24
+db-1       | 2026-08-24T12:13:12.862594404Z 2026-08-24 12:13:12 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+db-1       | 2026-08-24T12:13:12.862938686Z 2026-08-24 12:13:12 0 [Note] Plugin 'FEEDBACK' is disabled.
+db-1       | 2026-08-24T12:13:12.866047113Z 2026-08-24 12:13:12 0 [Note] InnoDB: Buffer pool(s) load completed at 260824 12:13:12
+db-1       | 2026-08-24T12:13:12.867999104Z 2026-08-24 12:13:12 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
+db-1       | 2026-08-24T12:13:12.877351514Z 2026-08-24 12:13:12 0 [Note] Server socket created on IP: '0.0.0.0', port: '3306'.
+db-1       | 2026-08-24T12:13:12.877752404Z 2026-08-24 12:13:12 0 [Note] Server socket created on IP: '::', port: '3306'.
+db-1       | 2026-08-24T12:13:12.939322832Z 2026-08-24 12:13:12 0 [Note] mariadbd: ready for connections.
+db-1       | 2026-08-24T12:13:12.939343921Z Version: '10.11.18-MariaDB-ubu2204'  socket: '/run/mysqld/mysqld.sock'  port: 3306  mariadb.org binary distribution
+db-1       | 2026-08-24T14:46:51.278463586Z 2026-08-24 14:46:51+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.11.18+maria~ubu2204 started.
+db-1       | 2026-08-24T14:52:59.687566649Z 2026-08-24 14:52:59+00:00 [Warn] [Entrypoint]: /sys/fs/cgroup///memory.pressure not writable, functionality unavailable to MariaDB
+db-1       | 2026-08-24T14:52:59.713696572Z 2026-08-24 14:52:59+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+db-1       | 2026-08-24T14:52:59.760371999Z 2026-08-24 14:52:59+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.11.18+maria~ubu2204 started.
+db-1       | 2026-08-24T14:53:00.945564200Z 2026-08-24 14:53:00+00:00 [Note] [Entrypoint]: MariaDB upgrade not required
+db-1       | 2026-08-24T14:53:01.043240707Z 2026-08-24 14:53:01 0 [Note] Starting MariaDB 10.11.18-MariaDB-ubu2204 source revision 197f92bee02d8e836f529f37625be69b83e7acbd server_uid dxrGqclNhtk90iGkwkGEzZ49tag= as process 1
+db-1       | 2026-08-24T14:53:01.104105356Z 2026-08-24 14:53:01 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+db-1       | 2026-08-24T14:53:01.105662748Z 2026-08-24 14:53:01 0 [Note] InnoDB: Number of transaction pools: 1
+db-1       | 2026-08-24T14:53:01.112009493Z 2026-08-24 14:53:01 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+db-1       | 2026-08-24T14:53:01.112548874Z 2026-08-24 14:53:01 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
+db-1       | 2026-08-24T14:53:01.113810846Z 2026-08-24 14:53:01 0 [Warning] mariadbd: io_uring_queue_init() failed with EPERM: sysctl kernel.io_uring_disabled has the value 2, or 1 and the user of the process is not a member of sysctl kernel.io_uring_group. (see man 2 io_uring_setup).
+db-1       | 2026-08-24T14:53:01.116716464Z create_uring failed: falling back to libaio
+db-1       | 2026-08-24T14:53:01.117060344Z 2026-08-24 14:53:01 0 [Note] InnoDB: Using Linux native AIO
+db-1       | 2026-08-24T14:53:01.117475706Z 2026-08-24 14:53:01 0 [Note] InnoDB: innodb_buffer_pool_size_max=8388608m, innodb_buffer_pool_size=128m
+db-1       | 2026-08-24T14:53:01.118011808Z 2026-08-24 14:53:01 0 [Note] InnoDB: Completed initialization of buffer pool
+db-1       | 2026-08-24T14:53:01.119780158Z 2026-08-24 14:53:01 0 [Note] InnoDB: File system buffers for log disabled (block size=512 bytes)
+db-1       | 2026-08-24T14:53:01.400578521Z 2026-08-24 14:53:01 0 [Note] InnoDB: Starting crash recovery from checkpoint LSN=44894
+db-1       | 2026-08-24T14:53:01.402741513Z 2026-08-24 14:53:01 0 [Note] InnoDB: End of log at LSN=53467
+db-1       | 2026-08-24T14:53:01.519942508Z 2026-08-24 14:53:01 0 [Note] InnoDB: To recover: 12 pages
+db-1       | 2026-08-24T14:53:01.533793511Z 2026-08-24 14:53:01 0 [Note] InnoDB: 128 rollback segments are active.
+db-1       | 2026-08-24T14:53:01.536696786Z 2026-08-24 14:53:01 0 [Note] InnoDB: Removed temporary tablespace data file: "./ibtmp1"
+db-1       | 2026-08-24T14:53:01.536781232Z 2026-08-24 14:53:01 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
+db-1       | 2026-08-24T14:53:01.537011765Z 2026-08-24 14:53:01 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
+db-1       | 2026-08-24T14:53:01.538634103Z 2026-08-24 14:53:01 0 [Note] InnoDB: log sequence number 53467; transaction id 36
+db-1       | 2026-08-24T14:53:01.539700086Z 2026-08-24 14:53:01 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+db-1       | 2026-08-24T14:53:01.543111786Z 2026-08-24 14:53:01 0 [Note] Plugin 'FEEDBACK' is disabled.
+db-1       | 2026-08-24T14:53:01.545824749Z 2026-08-24 14:53:01 0 [Note] InnoDB: Buffer pool(s) load completed at 260824 14:53:01
+db-1       | 2026-08-24T14:53:01.553736631Z 2026-08-24 14:53:01 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
+db-1       | 2026-08-24T14:53:01.561468882Z 2026-08-24 14:53:01 0 [Note] Server socket created on IP: '0.0.0.0', port: '3306'.
+db-1       | 2026-08-24T14:53:01.561486954Z 2026-08-24 14:53:01 0 [Note] Server socket created on IP: '::', port: '3306'.
+db-1       | 2026-08-24T14:53:01.616206027Z 2026-08-24 14:53:01 0 [Note] mariadbd: ready for connections.
+db-1       | 2026-08-24T14:53:01.616229489Z Version: '10.11.18-MariaDB-ubu2204'  socket: '/run/mysqld/mysqld.sock'  port: 3306  mariadb.org binary distribution
 
 ----------------------------------------
 Final Result

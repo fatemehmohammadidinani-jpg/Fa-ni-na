@@ -5,7 +5,7 @@
 هدف این مرحله تبدیل تمام عملیات دستی مراحل قبل به یک فرآیند تکرارپذیر و قابل‌استفاده مجدد است. اجرای فایل `site.yml` باید این نتیجه را ایجاد کند:
 
 ```text
-AlmaLinux Ansible Controller
+Ubuntu Ansible Controller
           |
           | SSH + Ansible
           v
@@ -72,7 +72,7 @@ Ubuntu Deployment Server
 - بررسی Certificate و Expiry Date
 - تست Redirect از HTTP به HTTPS
 - تست HTTPS روی Ubuntu
-- تست از AlmaLinux Controller
+- تست از Ubuntu Controller
 - ذخیره نتیجه در `verification.txt`
 
 ---

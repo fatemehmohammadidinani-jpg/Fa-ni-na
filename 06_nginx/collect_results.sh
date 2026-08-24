@@ -4,7 +4,7 @@ set -Eeuo pipefail
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 
-SERVER_IP="192.168.200.54"
+SERVER_IP="172.20.10.5"
 DOMAIN_NAME="myapp.test"
 HOSTS_ENTRY="${SERVER_IP} ${DOMAIN_NAME}"
 
@@ -19,7 +19,7 @@ fi
 
 {
     echo "========================================"
-    echo "/etc/hosts on AlmaLinux Controller"
+    echo "/etc/hosts on Ubuntu Controller"
     echo "========================================"
     echo
     echo "Generated at: $(date --iso-8601=seconds)"

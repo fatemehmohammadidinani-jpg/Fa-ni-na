@@ -3,7 +3,7 @@ Docker Compose Container Logs
 ========================================
 
 Generated at: 2026-08-20T12:41:39+03:30
-Deployment server: 192.168.200.54
+Deployment server: 172.20.10.5
 
 proxy-1  | 2026-08-20T09:10:10.785448734Z /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
 proxy-1  | 2026-08-20T09:10:10.785499737Z /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/

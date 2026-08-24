@@ -28,7 +28,7 @@
 - فعال بودن پورت‌های `80` و `443` در UFW
 - Healthy بودن سرویس‌های `db`، `backend` و `proxy`
 
-بررسی Domain روی AlmaLinux Controller:
+بررسی Domain روی Ubuntu Controller:
 
 ```bash
 getent hosts myapp.test
@@ -37,7 +37,7 @@ getent hosts myapp.test
 خروجی باید IP زیر را نشان دهد:
 
 ```text
-192.168.200.54
+172.20.10.5
 ```
 
 ## ۱. قرار دادن پوشه در پروژه
@@ -45,13 +45,13 @@ getent hosts myapp.test
 پوشه را در مسیر زیر قرار دهید:
 
 ```text
-~/naserrahmati_kubernetes_02/07_ssl
+~/fa-ni-na/07_ssl
 ```
 
 ## ۲. بررسی Syntax
 
 ```bash
-cd ~/naserrahmati_kubernetes_02/02_ansible_setup
+cd ~/fa-ni-na/02_ansible_setup
 
 ansible-playbook \
   -i inventory \
@@ -94,7 +94,7 @@ failed=0
 ## ۴. بررسی Certificate
 
 ```bash
-cat ~/naserrahmati_kubernetes_02/07_ssl/certificate_info.txt
+cat ~/fa-ni-na/07_ssl/certificate_info.txt
 ```
 
 این فایل شامل موارد زیر است:
@@ -115,7 +115,7 @@ cat ~/naserrahmati_kubernetes_02/07_ssl/certificate_info.txt
 ## ۵. بررسی تست‌ها
 
 ```bash
-cat ~/naserrahmati_kubernetes_02/07_ssl/test_results.txt
+cat ~/fa-ni-na/07_ssl/test_results.txt
 ```
 
 نتیجه موفق باید شامل موارد زیر باشد:
@@ -168,7 +168,7 @@ openssl x509 \
 ## ۷. بررسی Containerها روی Ubuntu
 
 ```bash
-ssh rahmati@192.168.200.54
+ssh ubuntu@172.20.10.5
 ```
 
 سپس:

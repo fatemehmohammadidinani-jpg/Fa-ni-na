@@ -7,8 +7,8 @@
   vars:
     deployment_dir: /opt/nginx-flask-mysql
 
-    deployment_user: rahmati
-    deployment_group: rahmati
+    deployment_user: ubuntu
+    deployment_group: ubuntu
 
     secret_group: appcontainer
     secret_gid: 10001
@@ -188,6 +188,7 @@
           - "{{ compose_pull.stderr | default('') }}"
 
     - name: Build backend image
+      when: false
       ansible.builtin.command:
         argv:
           - docker

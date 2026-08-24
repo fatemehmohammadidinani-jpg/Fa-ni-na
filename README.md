@@ -6,7 +6,7 @@
 
 اجزای اصلی پروژه:
 
-- **AlmaLinux Controller** برای نگهداری پروژه و اجرای Ansible
+- **Ubuntu Controller** برای نگهداری پروژه و اجرای Ansible
 - **Ubuntu 22.04.5 LTS Target Server** برای اجرای سرویس‌های Production/Lab
 - **Nginx Container** به‌عنوان Reverse Proxy و نقطه ورود HTTP/HTTPS
 - **Flask + Gunicorn Container** به‌عنوان Backend
@@ -19,15 +19,15 @@
 
 | مورد | مقدار |
 |---|---|
-| Controller OS | AlmaLinux |
-| Controller User | `naser` |
+| Controller OS | Ubuntu |
+| Controller User | `ubunto` |
 | Ansible Community | `14.3.1` |
 | Ansible Core | `2.21.3` |
 | Controller Python | `3.12.13` |
 | Target OS | Ubuntu 22.04.5 LTS |
-| Target Hostname | `local20054` |
-| Target IP | `192.168.200.54` |
-| Target SSH User | `rahmati` |
+| Target Hostname | `target` |
+| Target IP | `172.20.10.5` |
+| Target SSH User | `ubuntu` |
 | Application Domain | `myapp.test` |
 | Deployment Directory | `/opt/nginx-flask-mysql` |
 | HTTP Port | `80` |
@@ -38,7 +38,7 @@
 ## معماری کلی
 
 ```text
-AlmaLinux Controller
+Ubuntu Controller
         |
         | Ansible over SSH
         v
@@ -81,7 +81,7 @@ Ubuntu 22.04 Target Server
 
 ## پیش‌نیازها
 
-### روی AlmaLinux Controller
+### روی Ubuntu Controller
 
 - دسترسی شبکه به سرور Ubuntu
 - SSH Client
@@ -145,8 +145,8 @@ ansible-community --version
 
 ```bash
 ssh-keygen -t ed25519
-ssh-copy-id rahmati@192.168.200.54
-ssh rahmati@192.168.200.54
+ssh-copy-id ubuntu@172.20.10.5
+ssh ubuntu@172.20.10.5
 ```
 
 روی Target بررسی کنید:
@@ -160,7 +160,7 @@ sudo -v
 ## اجرای مرحله آماده‌سازی سرور
 
 ```bash
-cd ~/naserrahmati_kubernetes_02/02_ansible_setup
+cd ~/fa-ni-na/02_ansible_setup
 
 ansible-galaxy collection install -r requirements.yml
 
@@ -198,7 +198,7 @@ ansible-playbook \
 ## تست محلی Docker
 
 ```bash
-cd ~/naserrahmati_kubernetes_02/04_docker
+cd ~/fa-ni-na/04_docker
 
 docker compose \
   --env-file .env \
@@ -232,7 +232,7 @@ curl -i http://127.0.0.1:8080/
 Collectionهای مورد نیاز:
 
 ```bash
-cd ~/naserrahmati_kubernetes_02/02_ansible_setup
+cd ~/fa-ni-na/02_ansible_setup
 
 ansible-galaxy collection install \
   -r ../08_ansible_automation/requirements.yml
@@ -250,7 +250,7 @@ ansible-playbook \
 اجرای کامل:
 
 ```bash
-cd ~/naserrahmati_kubernetes_02
+cd ~/fa-ni-na
 
 chmod +x 08_ansible_automation/run_automation.sh
 ./08_ansible_automation/run_automation.sh
@@ -259,7 +259,7 @@ chmod +x 08_ansible_automation/run_automation.sh
 یا اجرای مستقیم:
 
 ```bash
-cd ~/naserrahmati_kubernetes_02/02_ansible_setup
+cd ~/fa-ni-na/02_ansible_setup
 
 set -o pipefail
 
@@ -280,10 +280,10 @@ failed=0
 
 ## تنظیم Domain آزمایشی
 
-روی AlmaLinux Controller:
+روی Ubuntu Controller:
 
 ```bash
-echo "192.168.200.54 myapp.test" |
+echo "172.20.10.5 myapp.test" |
 sudo tee -a /etc/hosts
 ```
 
@@ -338,7 +338,7 @@ curl -k -L http://myapp.test/
 ### بررسی Containerها روی Target
 
 ```bash
-ssh rahmati@192.168.200.54
+ssh ubuntu@172.20.10.5
 
 cd /opt/nginx-flask-mysql
 
@@ -364,8 +364,8 @@ docker compose exec -T proxy nginx -t
 
 | متغیر | مقدار فعلی |
 |---|---|
-| `ansible_host` | `192.168.200.54` |
-| `ansible_user` | `rahmati` |
+| `ansible_host` | `172.20.10.5` |
+| `ansible_user` | `ubuntu` |
 | `deployment_dir` | `/opt/nginx-flask-mysql` |
 | `application_domain` | `myapp.test` |
 | `http_port` | `80` |
@@ -378,7 +378,7 @@ docker compose exec -T proxy nginx -t
 ## ساختار پروژه
 
 ```text
-naserrahmati_kubernetes_02/
+fa-ni-na/
 ├── README.md
 ├── 01_environment/
 │   ├── server_info.md

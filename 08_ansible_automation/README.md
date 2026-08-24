@@ -34,13 +34,13 @@
 مسیر نهایی:
 
 ```text
-~/naserrahmati_kubernetes_02/08_ansible_automation
+~/fa-ni-na/08_ansible_automation
 ```
 
 ## ۲. نصب Collectionها
 
 ```bash
-cd ~/naserrahmati_kubernetes_02/02_ansible_setup
+cd ~/fa-ni-na/02_ansible_setup
 
 ansible-galaxy collection install \
   -r ../08_ansible_automation/requirements.yml
@@ -77,14 +77,14 @@ Check Mode عملیات Runtime مانند اجرای Docker و تست HTTP را
 ## ۵. اجرای کامل با یک دستور
 
 ```bash
-cd ~/naserrahmati_kubernetes_02
+cd ~/fa-ni-na
 
 chmod +x 08_ansible_automation/run_automation.sh
 
 ./08_ansible_automation/run_automation.sh
 ```
 
-Script رمز `sudo` کاربر `rahmati` را درخواست می‌کند و خروجی اجرا را در فایل زیر ذخیره می‌کند:
+Script رمز `sudo` کاربر `ubuntu` را درخواست می‌کند و خروجی اجرا را در فایل زیر ذخیره می‌کند:
 
 ```text
 08_ansible_automation/playbook_output.txt
@@ -99,7 +99,7 @@ Playbook نهایی Verification نیز فایل زیر را ایجاد می‌�
 ## ۶. اجرای مستقیم site.yml
 
 ```bash
-cd ~/naserrahmati_kubernetes_02/02_ansible_setup
+cd ~/fa-ni-na/02_ansible_setup
 
 set -o pipefail
 

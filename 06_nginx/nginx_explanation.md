@@ -30,13 +30,13 @@ myapp.test
 IP سرور مقصد:
 
 ```text
-192.168.200.54
+172.20.10.5
 ```
 
 Entry مورد نیاز در فایل `/etc/hosts` سیستم محلی:
 
 ```text
-192.168.200.54 myapp.test
+172.20.10.5 myapp.test
 ```
 
 از Domain فقط برای محیط آزمایش داخلی استفاده می‌شود و نیازی به DNS عمومی ندارد.
@@ -355,10 +355,10 @@ Playbook زیر برای انتقال و فعال‌سازی Configuration اس�
 
 ## ۱۴. تنظیم `/etc/hosts`
 
-روی AlmaLinux Controller باید Entry زیر به `/etc/hosts` اضافه شود:
+روی Ubuntu Controller باید Entry زیر به `/etc/hosts` اضافه شود:
 
 ```text
-192.168.200.54 myapp.test
+172.20.10.5 myapp.test
 ```
 
 پس از ثبت Entry، دستور زیر باید IP سرور را نمایش دهد:
@@ -426,7 +426,7 @@ test is successful
 └── test_results.txt
 ```
 
-دو فایل زیر با اجرای واقعی Script روی AlmaLinux Controller ایجاد می‌شوند:
+دو فایل زیر با اجرای واقعی Script روی Ubuntu Controller ایجاد می‌شوند:
 
 ```text
 hosts_file.txt

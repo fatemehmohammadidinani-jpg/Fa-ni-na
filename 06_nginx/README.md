@@ -21,7 +21,7 @@
 پوشه `06_nginx` را در ریشه پروژه قرار دهید:
 
 ```text
-~/naserrahmati_kubernetes_02/06_nginx
+~/fa-ni-na/06_nginx
 ```
 
 ## ۲. همگام‌سازی Configuration با سورس Docker
@@ -29,7 +29,7 @@
 برای اینکه اجرای مجدد مرحله ۵ Configuration قدیمی را برنگرداند:
 
 ```bash
-cd ~/naserrahmati_kubernetes_02
+cd ~/fa-ni-na
 
 cp \
   06_nginx/nginx_config.txt \
@@ -39,7 +39,7 @@ cp \
 ## ۳. بررسی Syntax مربوط به Playbook
 
 ```bash
-cd ~/naserrahmati_kubernetes_02/02_ansible_setup
+cd ~/fa-ni-na/02_ansible_setup
 
 ansible-playbook \
   -i inventory \
@@ -70,10 +70,10 @@ Application proxy status: 200
 
 ## ۵. تنظیم `/etc/hosts` و تولید خروجی‌ها
 
-روی AlmaLinux Controller:
+روی Ubuntu Controller:
 
 ```bash
-cd ~/naserrahmati_kubernetes_02
+cd ~/fa-ni-na
 
 chmod +x 06_nginx/collect_results.sh
 
@@ -83,7 +83,7 @@ chmod +x 06_nginx/collect_results.sh
 این Script در صورت نیاز Entry زیر را به `/etc/hosts` اضافه می‌کند:
 
 ```text
-192.168.200.54 myapp.test
+172.20.10.5 myapp.test
 ```
 
 سپس فایل‌های زیر را با خروجی واقعی ایجاد می‌کند:

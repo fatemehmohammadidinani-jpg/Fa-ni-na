@@ -2,7 +2,7 @@
 
 ## ۱. هدف
 
-این راهنما فرآیند استقرار پروژه را از یک Controller مبتنی بر AlmaLinux روی Ubuntu 22.04 توضیح می‌دهد.
+این راهنما فرآیند استقرار پروژه را از یک Controller مبتنی بر Ubuntu روی Ubuntu 22.04 توضیح می‌دهد.
 
 نتیجه نهایی:
 
@@ -14,13 +14,13 @@ https://myapp.test/
 
 ```text
 Controller:
-  OS: AlmaLinux
-  User: naser
+  OS: Ubuntu
+  User: ubunto
 
 Target:
   OS: Ubuntu 22.04.5 LTS
-  IP: 192.168.200.54
-  SSH User: rahmati
+  IP: 172.20.10.5
+  SSH User: ubuntu
 
 Application:
   Domain: myapp.test
@@ -86,13 +86,13 @@ Ansible community version 14.3.1
 
 ```bash
 ssh-keygen -t ed25519
-ssh-copy-id rahmati@192.168.200.54
+ssh-copy-id ubuntu@172.20.10.5
 ```
 
 تست:
 
 ```bash
-ssh rahmati@192.168.200.54
+ssh ubuntu@172.20.10.5
 ```
 
 روی Target:
@@ -106,7 +106,7 @@ sudo -v
 خروجی مورد انتظار:
 
 ```text
-rahmati
+ubuntu
 Python 3.x
 ```
 
@@ -122,13 +122,13 @@ Python 3.x
 
 ```ini
 [deployment_servers]
-ubuntu_deploy ansible_host=192.168.200.54 ansible_user=rahmati ansible_port=22 ansible_python_interpreter=/usr/bin/python3 deployment_user=rahmati
+ubuntu_deploy ansible_host=172.20.10.5 ansible_user=ubuntu ansible_port=22 ansible_python_interpreter=/usr/bin/python3 deployment_user=ubuntu
 ```
 
 بررسی:
 
 ```bash
-cd ~/naserrahmati_kubernetes_02/02_ansible_setup
+cd ~/fa-ni-na/02_ansible_setup
 
 ansible-inventory -i inventory --graph
 ```
@@ -233,7 +233,7 @@ UFW active
 ## ۸. Clone و بررسی پروژه مرجع
 
 ```bash
-cd ~/naserrahmati_kubernetes_02/03_project_clone
+cd ~/fa-ni-na/03_project_clone
 
 git clone https://github.com/docker/awesome-compose.git
 
@@ -257,7 +257,7 @@ db/password.txt
 ## ۹. تست Docker محلی روی Controller
 
 ```bash
-cd ~/naserrahmati_kubernetes_02/04_docker
+cd ~/fa-ni-na/04_docker
 ```
 
 بررسی Compose:
@@ -319,7 +319,7 @@ Hello Blog post #1
 
 ```bash
 grep -q "myapp.test" /etc/hosts ||
-echo "192.168.200.54 myapp.test" |
+echo "172.20.10.5 myapp.test" |
 sudo tee -a /etc/hosts
 ```
 
@@ -332,13 +332,13 @@ getent hosts myapp.test
 خروجی:
 
 ```text
-192.168.200.54 myapp.test
+172.20.10.5 myapp.test
 ```
 
 ## ۱۱. نصب Collectionهای Automation
 
 ```bash
-cd ~/naserrahmati_kubernetes_02/02_ansible_setup
+cd ~/fa-ni-na/02_ansible_setup
 
 ansible-galaxy collection install \
   -r ../08_ansible_automation/requirements.yml
@@ -417,7 +417,7 @@ ansible-playbook \
 ### روش Script
 
 ```bash
-cd ~/naserrahmati_kubernetes_02
+cd ~/fa-ni-na
 
 chmod +x 08_ansible_automation/run_automation.sh
 ./08_ansible_automation/run_automation.sh
@@ -426,7 +426,7 @@ chmod +x 08_ansible_automation/run_automation.sh
 ### روش مستقیم
 
 ```bash
-cd ~/naserrahmati_kubernetes_02/02_ansible_setup
+cd ~/fa-ni-na/02_ansible_setup
 
 set -o pipefail
 
@@ -458,7 +458,7 @@ failed=0
 ## ۱۶. بررسی Verification
 
 ```bash
-cat ~/naserrahmati_kubernetes_02/08_ansible_automation/verification.txt
+cat ~/fa-ni-na/08_ansible_automation/verification.txt
 ```
 
 مقادیر مورد انتظار:
@@ -475,7 +475,7 @@ Overall automation verification: PASSED
 ## ۱۷. بررسی روی Ubuntu
 
 ```bash
-ssh rahmati@192.168.200.54
+ssh ubuntu@172.20.10.5
 ```
 
 ```bash
@@ -567,7 +567,7 @@ openssl x509 \
 subject=... CN = myapp.test
 issuer=... CN = myapp.test
 DNS:myapp.test
-IP Address:192.168.200.54
+IP Address:172.20.10.5
 ```
 
 ## ۲۰. مدیریت بعد از استقرار

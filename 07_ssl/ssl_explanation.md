@@ -20,14 +20,14 @@ myapp.test
 IP سرور:
 
 ```text
-192.168.200.54
+172.20.10.5
 ```
 
 Certificate شامل Subject Alternative Nameهای زیر است:
 
 ```text
 DNS:myapp.test
-IP:192.168.200.54
+IP:172.20.10.5
 ```
 
 وجود SAN باعث می‌شود نام Domain و IP داخل Certificate به‌صورت صریح ثبت شوند.

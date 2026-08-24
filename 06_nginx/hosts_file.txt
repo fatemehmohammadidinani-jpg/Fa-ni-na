@@ -1,5 +1,5 @@
 ========================================
-/etc/hosts on AlmaLinux Controller
+/etc/hosts on Ubuntu Controller
 ========================================
 
 Generated at: 2026-08-21T10:42:07+03:30
@@ -10,4 +10,4 @@ Generated at: 2026-08-21T10:42:07+03:30
 192.168.1.10	app.local
 192.168.1.11	db.local
 192.168.1.12	cache.local
-192.168.200.54 myapp.test
+172.20.10.5 myapp.test

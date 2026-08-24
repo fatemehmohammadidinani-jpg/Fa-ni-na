@@ -3,13 +3,13 @@ SSL/TLS Test Results
 ========================================
 
 Generated at:
-2026-08-21T15:23:52+03:30
+2026-08-23T23:01:02+00:00
 
 Domain:
 myapp.test
 
 Server IP:
-192.168.200.54
+172.20.10.5
 
 ----------------------------------------
 Nginx Configuration Test
@@ -25,9 +25,9 @@ Temporary container test:
 /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
 /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
 /docker-entrypoint.sh: Configuration complete; ready for start up
-time="2026-08-21T11:53:31Z" level=warning msg="/opt/nginx-flask-mysql/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
- Container nginx-flask-mysql-proxy-run-88d961b9f18a Creating 
- Container nginx-flask-mysql-proxy-run-88d961b9f18a Created 
+time="2026-08-23T23:00:53Z" level=warning msg="/opt/nginx-flask-mysql/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ Container nginx-flask-mysql-proxy-run-858851e40d7c Creating 
+ Container nginx-flask-mysql-proxy-run-858851e40d7c Created 
 nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
 nginx: configuration file /etc/nginx/nginx.conf test is successful
 
@@ -64,12 +64,12 @@ Result:
 PASSED
 
 ----------------------------------------
-Domain Resolution on AlmaLinux Controller
+Domain Resolution on Ubuntu Controller
 ----------------------------------------
 
-192.168.200.54  STREAM myapp.test
-192.168.200.54  DGRAM  
-192.168.200.54  RAW    
+172.20.10.5     STREAM myapp.test
+172.20.10.5     DGRAM  
+172.20.10.5     RAW    
 
 ----------------------------------------
 Test 3: HTTP Redirect from Controller
@@ -77,7 +77,7 @@ Test 3: HTTP Redirect from Controller
 
 HTTP/1.1 301 Moved Permanently
 Server: nginx
-Date: Fri, 21 Aug 2026 11:53:47 GMT
+Date: Sun, 23 Aug 2026 23:01:00 GMT
 Content-Type: text/html
 Content-Length: 162
 Connection: keep-alive
@@ -89,7 +89,7 @@ Test 4: Direct HTTPS from Controller
 
 HTTP/1.1 200 OK
 Server: nginx
-Date: Fri, 21 Aug 2026 11:53:48 GMT
+Date: Sun, 23 Aug 2026 23:01:00 GMT
 Content-Type: text/html; charset=utf-8
 Content-Length: 132
 Connection: keep-alive
@@ -102,7 +102,7 @@ Test 5: Follow HTTP Redirect to HTTPS
 
 HTTP/1.1 301 Moved Permanently
 Server: nginx
-Date: Fri, 21 Aug 2026 11:53:49 GMT
+Date: Sun, 23 Aug 2026 23:01:01 GMT
 Content-Type: text/html
 Content-Length: 162
 Connection: keep-alive
@@ -110,7 +110,7 @@ Location: https://myapp.test/
 
 HTTP/1.1 200 OK
 Server: nginx
-Date: Fri, 21 Aug 2026 11:53:49 GMT
+Date: Sun, 23 Aug 2026 23:01:01 GMT
 Content-Type: text/html; charset=utf-8
 Content-Length: 132
 Connection: keep-alive
@@ -121,14 +121,14 @@ Connection: keep-alive
 Served Certificate Information
 ----------------------------------------
 
-subject=C=AZ, ST=Baku, L=Baku, O=DevOps Lab, OU=Training, CN=myapp.test
-issuer=C=AZ, ST=Baku, L=Baku, O=DevOps Lab, OU=Training, CN=myapp.test
-serial=5FB597ECA76A2A2911027BEC3B62EF7835AE6CEF
-notBefore=Aug 21 11:53:23 2026 GMT
-notAfter=Aug 21 11:53:23 2027 GMT
-sha256 Fingerprint=6A:2E:65:C2:D1:D0:51:DA:34:F2:3B:48:F6:28:89:F0:98:17:BC:96:88:B8:11:AA:50:97:52:DB:0B:8B:DD:D0
+subject=C = AZ, ST = Baku, L = Baku, O = DevOps Lab, OU = Training, CN = myapp.test
+issuer=C = AZ, ST = Baku, L = Baku, O = DevOps Lab, OU = Training, CN = myapp.test
+serial=41DE9D7DD6F02F28179C59C20A746E8A0EAFC805
+notBefore=Aug 23 22:53:04 2026 GMT
+notAfter=Aug 23 22:53:04 2027 GMT
+sha256 Fingerprint=8E:C3:7E:20:BD:69:D5:7D:83:CF:75:6A:26:74:36:05:72:30:E6:43:DB:0C:DB:29:F3:73:68:0F:AA:F4:81:01
 X509v3 Subject Alternative Name: 
-    DNS:myapp.test, IP Address:192.168.200.54
+    DNS:myapp.test, IP Address:172.20.10.5
 
 ----------------------------------------
 Final Result

@@ -22,7 +22,7 @@
 ```bash
 ansible -i inventory deployment_servers -m ping
 
-ssh rahmati@192.168.200.54
+ssh ubuntu@172.20.10.5
 
 sudo systemctl status docker --no-pager
 
@@ -57,8 +57,8 @@ Permission denied
 ### بررسی
 
 ```bash
-ping -c 4 192.168.200.54
-ssh -v rahmati@192.168.200.54
+ping -c 4 172.20.10.5
+ssh -v ubuntu@172.20.10.5
 ```
 
 روی Target:
@@ -71,13 +71,13 @@ sudo ufw status verbose
 ### راه‌حل
 
 ```bash
-ssh-copy-id rahmati@192.168.200.54
+ssh-copy-id ubuntu@172.20.10.5
 ```
 
 در صورت تغییر Host Key و تأیید هویت واقعی سرور:
 
 ```bash
-ssh-keygen -R 192.168.200.54
+ssh-keygen -R 172.20.10.5
 ```
 
 ---
@@ -95,7 +95,7 @@ user is not in the sudoers file
 ### بررسی
 
 ```bash
-ssh rahmati@192.168.200.54
+ssh ubuntu@172.20.10.5
 sudo -v
 ```
 
@@ -133,7 +133,7 @@ Python روی Target نصب نیست یا مسیر اشتباه است.
 ### بررسی
 
 ```bash
-ssh rahmati@192.168.200.54 "command -v python3 && python3 --version"
+ssh ubuntu@172.20.10.5 "command -v python3 && python3 --version"
 ```
 
 ### تنظیم Inventory
@@ -153,7 +153,7 @@ Ansible فایل `ansible.cfg` را در Current Directory پیدا نکرده �
 ### راه‌حل
 
 ```bash
-cd ~/naserrahmati_kubernetes_02/02_ansible_setup
+cd ~/fa-ni-na/02_ansible_setup
 
 export ANSIBLE_CONFIG="$PWD/ansible.cfg"
 
@@ -632,7 +632,7 @@ Permissionها ظاهراً درست‌اند ولی Container هنوز فایل
 
 ### بررسی
 
-روی AlmaLinux:
+روی Ubuntu:
 
 ```bash
 getenforce
@@ -875,7 +875,7 @@ openssl x509 \
 
 ```text
 DNS:myapp.test
-IP Address:192.168.200.54
+IP Address:172.20.10.5
 ```
 
 در صورت نبود SAN باید Certificate دوباره تولید شود.
@@ -890,10 +890,10 @@ IP Address:192.168.200.54
 Could not resolve host: myapp.test
 ```
 
-### راه‌حل روی AlmaLinux
+### راه‌حل روی Ubuntu
 
 ```bash
-echo "192.168.200.54 myapp.test" |
+echo "172.20.10.5 myapp.test" |
 sudo tee -a /etc/hosts
 ```
 

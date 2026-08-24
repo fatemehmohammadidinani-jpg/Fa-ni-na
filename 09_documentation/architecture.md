@@ -15,13 +15,13 @@
 
 است.
 
-معماری از جداسازی Controller و Target استفاده می‌کند. فایل‌های پروژه، Playbookها و Templateها روی AlmaLinux Controller نگهداری می‌شوند و عملیات Deployment از طریق SSH روی Ubuntu Target اجرا می‌شود.
+معماری از جداسازی Controller و Target استفاده می‌کند. فایل‌های پروژه، Playbookها و Templateها روی Ubuntu Controller نگهداری می‌شوند و عملیات Deployment از طریق SSH روی Ubuntu Target اجرا می‌شود.
 
 ## ۲. نمای سطح بالا
 
 ```text
 +------------------------------+
-| AlmaLinux Controller         |
+| Ubuntu Controller         |
 |------------------------------|
 | Git                          |
 | Ansible                      |
@@ -67,7 +67,7 @@
 
 ## ۳. اجزای معماری
 
-### ۳.۱. AlmaLinux Controller
+### ۳.۱. Ubuntu Controller
 
 وظایف:
 
@@ -94,9 +94,9 @@ Python 3.12.13
 
 ```text
 OS: Ubuntu 22.04.5 LTS
-Hostname: local20054
-IP: 192.168.200.54
-SSH User: rahmati
+Hostname: target
+IP: 172.20.10.5
+SSH User: ubuntu
 ```
 
 وظایف:
@@ -236,7 +236,7 @@ SANها:
 
 ```text
 DNS:myapp.test
-IP:192.168.200.54
+IP:172.20.10.5
 ```
 
 پروتکل‌ها:
@@ -302,7 +302,7 @@ myapp.test
     |
     | /etc/hosts
     v
-192.168.200.54
+172.20.10.5
 ```
 
 ### ۵.۲. HTTP Request

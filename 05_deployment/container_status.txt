@@ -3,7 +3,7 @@ Docker Compose Container Status
 ========================================
 
 Generated at: 2026-08-20T12:41:37+03:30
-Deployment server: 192.168.200.54
+Deployment server: 172.20.10.5
 Deployment directory: /opt/nginx-flask-mysql
 
 NAME                          IMAGE                           COMMAND                  SERVICE   CREATED              STATUS                        PORTS

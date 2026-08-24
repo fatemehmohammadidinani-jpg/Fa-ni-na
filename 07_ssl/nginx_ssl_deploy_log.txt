@@ -69,7 +69,7 @@ ok: [ubuntu_deploy]
 
 TASK [Validate the redirect location] ******************************************
 [WARNING]: Jinja constant strings should not contain embedded templates. This feature will be disabled by default in ansible-core 2.23.
-Origin: /home/naser/naserrahmati_kubernetes_02/07_ssl/configure_ssl.yml:270:13
+Origin: /home/ubunto/fa-ni-na/07_ssl/configure_ssl.yml:270:13
 
 268       ansible.builtin.assert:
 269         that:
@@ -131,8 +131,8 @@ ok: [ubuntu_deploy] => {
         "HTTP redirect status: 301",
         "Redirect location: https://myapp.test/",
         "HTTPS status: 200",
-        "Certificate information: /home/naser/naserrahmati_kubernetes_02/07_ssl/certificate_info.txt",
-        "Test results: /home/naser/naserrahmati_kubernetes_02/07_ssl/test_results.txt"
+        "Certificate information: /home/ubunto/fa-ni-na/07_ssl/certificate_info.txt",
+        "Test results: /home/ubunto/fa-ni-na/07_ssl/test_results.txt"
     ]
 }
 

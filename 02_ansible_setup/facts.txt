@@ -1,7 +1,7 @@
 ubuntu_deploy | SUCCESS => {
     "ansible_facts": {
         "ansible_all_ipv4_addresses": [
-            "192.168.200.54"
+            "172.20.10.5"
         ],
         "ansible_all_ipv6_addresses": [
             "fe80::250:56ff:fea7:7579"
@@ -50,7 +50,7 @@ ubuntu_deploy | SUCCESS => {
             "year": "2026"
         },
         "ansible_default_ipv4": {
-            "address": "192.168.200.54",
+            "address": "172.20.10.5",
             "alias": "ens33",
             "broadcast": "192.168.200.255",
             "gateway": "192.168.200.3",
@@ -541,7 +541,7 @@ ubuntu_deploy | SUCCESS => {
             },
             "hw_timestamp_filters": [],
             "ipv4": {
-                "address": "192.168.200.54",
+                "address": "172.20.10.5",
                 "broadcast": "192.168.200.255",
                 "netmask": "255.255.255.0",
                 "network": "192.168.200.0",
@@ -565,17 +565,17 @@ ubuntu_deploy | SUCCESS => {
         },
         "ansible_env": {
             "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/1000/bus",
-            "HOME": "/home/rahmati",
+            "HOME": "/home/ubuntu",
             "LANG": "en_US.UTF-8",
-            "LOGNAME": "rahmati",
+            "LOGNAME": "ubuntu",
             "MOTD_SHOWN": "pam",
             "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
-            "PWD": "/home/rahmati",
+            "PWD": "/home/ubuntu",
             "SHELL": "/bin/bash",
             "SHLVL": "0",
             "SSH_CLIENT": "192.168.200.53 41302 22",
-            "SSH_CONNECTION": "192.168.200.53 41302 192.168.200.54 22",
-            "USER": "rahmati",
+            "SSH_CONNECTION": "192.168.200.53 41302 172.20.10.5 22",
+            "USER": "ubuntu",
             "XDG_RUNTIME_DIR": "/run/user/1000",
             "XDG_SESSION_CLASS": "user",
             "XDG_SESSION_ID": "163",
@@ -648,8 +648,8 @@ ubuntu_deploy | SUCCESS => {
             "arch_capabilities"
         ],
         "ansible_form_factor": "Other",
-        "ansible_fqdn": "local20054",
-        "ansible_hostname": "local20054",
+        "ansible_fqdn": "target",
+        "ansible_hostname": "target",
         "ansible_hostnqn": "",
         "ansible_interfaces": [
             "ens33",
@@ -759,7 +759,7 @@ ubuntu_deploy | SUCCESS => {
             "ipv4": [
                 "127.0.0.0/8",
                 "127.0.0.1",
-                "192.168.200.54"
+                "172.20.10.5"
             ],
             "ipv6": [
                 "::1",
@@ -1013,7 +1013,7 @@ ubuntu_deploy | SUCCESS => {
                 "uuid": "N/A"
             }
         ],
-        "ansible_nodename": "local20054",
+        "ansible_nodename": "target",
         "ansible_os_family": "Debian",
         "ansible_pkg_mgr": "apt",
         "ansible_proc_cmdline": {
@@ -1090,10 +1090,10 @@ ubuntu_deploy | SUCCESS => {
             "version": 249
         },
         "ansible_uptime_seconds": 458339,
-        "ansible_user_dir": "/home/rahmati",
-        "ansible_user_gecos": "local20054",
+        "ansible_user_dir": "/home/ubuntu",
+        "ansible_user_gecos": "target",
         "ansible_user_gid": 1000,
-        "ansible_user_id": "rahmati",
+        "ansible_user_id": "ubuntu",
         "ansible_user_shell": "/bin/bash",
         "ansible_user_uid": 1000,
         "ansible_userspace_architecture": "x86_64",

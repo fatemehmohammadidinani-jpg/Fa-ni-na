@@ -1,12 +1,12 @@
-Using /home/naser/naserrahmati_kubernetes_02/02_ansible_setup/ansible.cfg as config file
+Using /home/ubunto/fa-ni-na/02_ansible_setup/ansible.cfg as config file
 
 PLAY [Deploy the Flask and MariaDB application services] ***********************
 
 TASK [Verify required source files on the Ansible Controller] ******************
-ok: [ubuntu_deploy -> localhost] => (item=Dockerfile) => {"ansible_loop_var": "item", "changed": false, "item": "Dockerfile", "stat": {"atime": 1787327390.931451, "attr_flags": "", "attributes": [], "block_size": 4096, "blocks": 8, "charset": "us-ascii", "checksum": "07676b05606464ee23e979966f32f88035debab1", "ctime": 1787212320.9230945, "dev": 64770, "device_type": 0, "disk_usage_bytes": 4096, "executable": false, "exists": true, "gid": 1002, "gr_name": "naser", "inode": 52539728, "isblk": false, "ischr": false, "isdir": false, "isfifo": false, "isgid": false, "islnk": false, "isreg": true, "issock": false, "isuid": false, "mimetype": "text/plain", "mode": "0644", "mtime": 1787212320.9220943, "nlink": 1, "path": "/home/naser/naserrahmati_kubernetes_02/08_ansible_automation/../04_docker/Dockerfile", "pw_name": "naser", "readable": true, "rgrp": true, "roth": true, "rusr": true, "size": 1093, "uid": 1002, "version": "3953664231", "wgrp": false, "woth": false, "writeable": true, "wusr": true, "xgrp": false, "xoth": false, "xusr": false}}
-ok: [ubuntu_deploy -> localhost] => (item=.dockerignore) => {"ansible_loop_var": "item", "changed": false, "item": ".dockerignore", "stat": {"atime": 1787327391.5164747, "attr_flags": "", "attributes": [], "block_size": 4096, "blocks": 8, "charset": "us-ascii", "checksum": "87048d001642430e616bd2b280be78ae0a6d9d61", "ctime": 1787207237.6803503, "dev": 64770, "device_type": 0, "disk_usage_bytes": 4096, "executable": false, "exists": true, "gid": 1002, "gr_name": "naser", "inode": 52539065, "isblk": false, "ischr": false, "isdir": false, "isfifo": false, "isgid": false, "islnk": false, "isreg": true, "issock": false, "isuid": false, "mimetype": "text/plain", "mode": "0644", "mtime": 1787207237.6803503, "nlink": 1, "path": "/home/naser/naserrahmati_kubernetes_02/08_ansible_automation/../04_docker/.dockerignore", "pw_name": "naser", "readable": true, "rgrp": true, "roth": true, "rusr": true, "size": 176, "uid": 1002, "version": "339106933", "wgrp": false, "woth": false, "writeable": true, "wusr": true, "xgrp": false, "xoth": false, "xusr": false}}
-ok: [ubuntu_deploy -> localhost] => (item=app/hello.py) => {"ansible_loop_var": "item", "changed": false, "item": "app/hello.py", "stat": {"atime": 1787327392.065497, "attr_flags": "", "attributes": [], "block_size": 4096, "blocks": 8, "charset": "us-ascii", "checksum": "b4743fc77beafc4f6f5cdd0ae8c5a2b714b1332d", "ctime": 1787153919.5500932, "dev": 64770, "device_type": 0, "disk_usage_bytes": 4096, "executable": true, "exists": true, "gid": 1002, "gr_name": "naser", "inode": 52538577, "isblk": false, "ischr": false, "isdir": false, "isfifo": false, "isgid": false, "islnk": false, "isreg": true, "issock": false, "isuid": false, "mimetype": "text/x-script.python", "mode": "0755", "mtime": 1787153919.5500932, "nlink": 1, "path": "/home/naser/naserrahmati_kubernetes_02/08_ansible_automation/../04_docker/app/hello.py", "pw_name": "naser", "readable": true, "rgrp": true, "roth": true, "rusr": true, "size": 1486, "uid": 1002, "version": "1864775699", "wgrp": false, "woth": false, "writeable": true, "wusr": true, "xgrp": true, "xoth": true, "xusr": true}}
-ok: [ubuntu_deploy -> localhost] => (item=app/requirements.txt) => {"ansible_loop_var": "item", "changed": false, "item": "app/requirements.txt", "stat": {"atime": 1787327392.6275196, "attr_flags": "", "attributes": [], "block_size": 4096, "blocks": 8, "charset": "us-ascii", "checksum": "2e876efdb318e2f6ab8b8fada924df31eba94a99", "ctime": 1787153956.0066094, "dev": 64770, "device_type": 0, "disk_usage_bytes": 4096, "executable": true, "exists": true, "gid": 1002, "gr_name": "naser", "inode": 52538578, "isblk": false, "ischr": false, "isdir": false, "isfifo": false, "isgid": false, "islnk": false, "isreg": true, "issock": false, "isuid": false, "mimetype": "text/plain", "mode": "0755", "mtime": 1787153956.0066094, "nlink": 1, "path": "/home/naser/naserrahmati_kubernetes_02/08_ansible_automation/../04_docker/app/requirements.txt", "pw_name": "naser", "readable": true, "rgrp": true, "roth": true, "rusr": true, "size": 60, "uid": 1002, "version": "2644219730", "wgrp": false, "woth": false, "writeable": true, "wusr": true, "xgrp": true, "xoth": true, "xusr": true}}
+ok: [ubuntu_deploy -> localhost] => (item=Dockerfile) => {"ansible_loop_var": "item", "changed": false, "item": "Dockerfile", "stat": {"atime": 1787327390.931451, "attr_flags": "", "attributes": [], "block_size": 4096, "blocks": 8, "charset": "us-ascii", "checksum": "07676b05606464ee23e979966f32f88035debab1", "ctime": 1787212320.9230945, "dev": 64770, "device_type": 0, "disk_usage_bytes": 4096, "executable": false, "exists": true, "gid": 1002, "gr_name": "ubunto", "inode": 52539728, "isblk": false, "ischr": false, "isdir": false, "isfifo": false, "isgid": false, "islnk": false, "isreg": true, "issock": false, "isuid": false, "mimetype": "text/plain", "mode": "0644", "mtime": 1787212320.9220943, "nlink": 1, "path": "/home/ubunto/fa-ni-na/08_ansible_automation/../04_docker/Dockerfile", "pw_name": "ubunto", "readable": true, "rgrp": true, "roth": true, "rusr": true, "size": 1093, "uid": 1002, "version": "3953664231", "wgrp": false, "woth": false, "writeable": true, "wusr": true, "xgrp": false, "xoth": false, "xusr": false}}
+ok: [ubuntu_deploy -> localhost] => (item=.dockerignore) => {"ansible_loop_var": "item", "changed": false, "item": ".dockerignore", "stat": {"atime": 1787327391.5164747, "attr_flags": "", "attributes": [], "block_size": 4096, "blocks": 8, "charset": "us-ascii", "checksum": "87048d001642430e616bd2b280be78ae0a6d9d61", "ctime": 1787207237.6803503, "dev": 64770, "device_type": 0, "disk_usage_bytes": 4096, "executable": false, "exists": true, "gid": 1002, "gr_name": "ubunto", "inode": 52539065, "isblk": false, "ischr": false, "isdir": false, "isfifo": false, "isgid": false, "islnk": false, "isreg": true, "issock": false, "isuid": false, "mimetype": "text/plain", "mode": "0644", "mtime": 1787207237.6803503, "nlink": 1, "path": "/home/ubunto/fa-ni-na/08_ansible_automation/../04_docker/.dockerignore", "pw_name": "ubunto", "readable": true, "rgrp": true, "roth": true, "rusr": true, "size": 176, "uid": 1002, "version": "339106933", "wgrp": false, "woth": false, "writeable": true, "wusr": true, "xgrp": false, "xoth": false, "xusr": false}}
+ok: [ubuntu_deploy -> localhost] => (item=app/hello.py) => {"ansible_loop_var": "item", "changed": false, "item": "app/hello.py", "stat": {"atime": 1787327392.065497, "attr_flags": "", "attributes": [], "block_size": 4096, "blocks": 8, "charset": "us-ascii", "checksum": "b4743fc77beafc4f6f5cdd0ae8c5a2b714b1332d", "ctime": 1787153919.5500932, "dev": 64770, "device_type": 0, "disk_usage_bytes": 4096, "executable": true, "exists": true, "gid": 1002, "gr_name": "ubunto", "inode": 52538577, "isblk": false, "ischr": false, "isdir": false, "isfifo": false, "isgid": false, "islnk": false, "isreg": true, "issock": false, "isuid": false, "mimetype": "text/x-script.python", "mode": "0755", "mtime": 1787153919.5500932, "nlink": 1, "path": "/home/ubunto/fa-ni-na/08_ansible_automation/../04_docker/app/hello.py", "pw_name": "ubunto", "readable": true, "rgrp": true, "roth": true, "rusr": true, "size": 1486, "uid": 1002, "version": "1864775699", "wgrp": false, "woth": false, "writeable": true, "wusr": true, "xgrp": true, "xoth": true, "xusr": true}}
+ok: [ubuntu_deploy -> localhost] => (item=app/requirements.txt) => {"ansible_loop_var": "item", "changed": false, "item": "app/requirements.txt", "stat": {"atime": 1787327392.6275196, "attr_flags": "", "attributes": [], "block_size": 4096, "blocks": 8, "charset": "us-ascii", "checksum": "2e876efdb318e2f6ab8b8fada924df31eba94a99", "ctime": 1787153956.0066094, "dev": 64770, "device_type": 0, "disk_usage_bytes": 4096, "executable": true, "exists": true, "gid": 1002, "gr_name": "ubunto", "inode": 52538578, "isblk": false, "ischr": false, "isdir": false, "isfifo": false, "isgid": false, "islnk": false, "isreg": true, "issock": false, "isuid": false, "mimetype": "text/plain", "mode": "0755", "mtime": 1787153956.0066094, "nlink": 1, "path": "/home/ubunto/fa-ni-na/08_ansible_automation/../04_docker/app/requirements.txt", "pw_name": "ubunto", "readable": true, "rgrp": true, "roth": true, "rusr": true, "size": 60, "uid": 1002, "version": "2644219730", "wgrp": false, "woth": false, "writeable": true, "wusr": true, "xgrp": true, "xoth": true, "xusr": true}}
 
 TASK [Stop when a required source file is missing] *****************************
 ok: [ubuntu_deploy] => (item=Dockerfile) => {
@@ -32,7 +32,7 @@ ok: [ubuntu_deploy] => (item=Dockerfile) => {
             "executable": false,
             "exists": true,
             "gid": 1002,
-            "gr_name": "naser",
+            "gr_name": "ubunto",
             "inode": 52539728,
             "isblk": false,
             "ischr": false,
@@ -47,8 +47,8 @@ ok: [ubuntu_deploy] => (item=Dockerfile) => {
             "mode": "0644",
             "mtime": 1787212320.9220943,
             "nlink": 1,
-            "path": "/home/naser/naserrahmati_kubernetes_02/08_ansible_automation/../04_docker/Dockerfile",
-            "pw_name": "naser",
+            "path": "/home/ubunto/fa-ni-na/08_ansible_automation/../04_docker/Dockerfile",
+            "pw_name": "ubunto",
             "readable": true,
             "rgrp": true,
             "roth": true,
@@ -90,7 +90,7 @@ ok: [ubuntu_deploy] => (item=.dockerignore) => {
             "executable": false,
             "exists": true,
             "gid": 1002,
-            "gr_name": "naser",
+            "gr_name": "ubunto",
             "inode": 52539065,
             "isblk": false,
             "ischr": false,
@@ -105,8 +105,8 @@ ok: [ubuntu_deploy] => (item=.dockerignore) => {
             "mode": "0644",
             "mtime": 1787207237.6803503,
             "nlink": 1,
-            "path": "/home/naser/naserrahmati_kubernetes_02/08_ansible_automation/../04_docker/.dockerignore",
-            "pw_name": "naser",
+            "path": "/home/ubunto/fa-ni-na/08_ansible_automation/../04_docker/.dockerignore",
+            "pw_name": "ubunto",
             "readable": true,
             "rgrp": true,
             "roth": true,
@@ -148,7 +148,7 @@ ok: [ubuntu_deploy] => (item=app/hello.py) => {
             "executable": true,
             "exists": true,
             "gid": 1002,
-            "gr_name": "naser",
+            "gr_name": "ubunto",
             "inode": 52538577,
             "isblk": false,
             "ischr": false,
@@ -163,8 +163,8 @@ ok: [ubuntu_deploy] => (item=app/hello.py) => {
             "mode": "0755",
             "mtime": 1787153919.5500932,
             "nlink": 1,
-            "path": "/home/naser/naserrahmati_kubernetes_02/08_ansible_automation/../04_docker/app/hello.py",
-            "pw_name": "naser",
+            "path": "/home/ubunto/fa-ni-na/08_ansible_automation/../04_docker/app/hello.py",
+            "pw_name": "ubunto",
             "readable": true,
             "rgrp": true,
             "roth": true,
@@ -206,7 +206,7 @@ ok: [ubuntu_deploy] => (item=app/requirements.txt) => {
             "executable": true,
             "exists": true,
             "gid": 1002,
-            "gr_name": "naser",
+            "gr_name": "ubunto",
             "inode": 52538578,
             "isblk": false,
             "ischr": false,
@@ -221,8 +221,8 @@ ok: [ubuntu_deploy] => (item=app/requirements.txt) => {
             "mode": "0755",
             "mtime": 1787153956.0066094,
             "nlink": 1,
-            "path": "/home/naser/naserrahmati_kubernetes_02/08_ansible_automation/../04_docker/app/requirements.txt",
-            "pw_name": "naser",
+            "path": "/home/ubunto/fa-ni-na/08_ansible_automation/../04_docker/app/requirements.txt",
+            "pw_name": "ubunto",
             "readable": true,
             "rgrp": true,
             "roth": true,
@@ -252,28 +252,28 @@ TASK [Create the host group used by the backend container secret] **************
 ok: [ubuntu_deploy] => {"changed": false, "gid": 10001, "name": "appcontainer", "state": "present", "system": false}
 
 TASK [Create application directories] ******************************************
-ok: [ubuntu_deploy] => (item={'path': '/opt/nginx-flask-mysql', 'owner': 'rahmati', 'group': 'rahmati', 'mode': '0755'}) => {"ansible_loop_var": "item", "changed": false, "gid": 1000, "group": "rahmati", "item": {"group": "rahmati", "mode": "0755", "owner": "rahmati", "path": "/opt/nginx-flask-mysql"}, "mode": "0755", "owner": "rahmati", "path": "/opt/nginx-flask-mysql", "size": 4096, "state": "directory", "uid": 1000}
-ok: [ubuntu_deploy] => (item={'path': '/opt/nginx-flask-mysql/app', 'owner': 'rahmati', 'group': 'rahmati', 'mode': '0755'}) => {"ansible_loop_var": "item", "changed": false, "gid": 1000, "group": "rahmati", "item": {"group": "rahmati", "mode": "0755", "owner": "rahmati", "path": "/opt/nginx-flask-mysql/app"}, "mode": "0755", "owner": "rahmati", "path": "/opt/nginx-flask-mysql/app", "size": 4096, "state": "directory", "uid": 1000}
-ok: [ubuntu_deploy] => (item={'path': '/opt/nginx-flask-mysql/nginx', 'owner': 'rahmati', 'group': 'rahmati', 'mode': '0755'}) => {"ansible_loop_var": "item", "changed": false, "gid": 1000, "group": "rahmati", "item": {"group": "rahmati", "mode": "0755", "owner": "rahmati", "path": "/opt/nginx-flask-mysql/nginx"}, "mode": "0755", "owner": "rahmati", "path": "/opt/nginx-flask-mysql/nginx", "size": 4096, "state": "directory", "uid": 1000}
-changed: [ubuntu_deploy] => (item={'path': '/opt/nginx-flask-mysql/nginx/sites-available', 'owner': 'rahmati', 'group': 'rahmati', 'mode': '0755'}) => {"ansible_loop_var": "item", "changed": true, "gid": 1000, "group": "rahmati", "item": {"group": "rahmati", "mode": "0755", "owner": "rahmati", "path": "/opt/nginx-flask-mysql/nginx/sites-available"}, "mode": "0755", "owner": "rahmati", "path": "/opt/nginx-flask-mysql/nginx/sites-available", "size": 4096, "state": "directory", "uid": 1000}
-changed: [ubuntu_deploy] => (item={'path': '/opt/nginx-flask-mysql/nginx/sites-enabled', 'owner': 'rahmati', 'group': 'rahmati', 'mode': '0755'}) => {"ansible_loop_var": "item", "changed": true, "gid": 1000, "group": "rahmati", "item": {"group": "rahmati", "mode": "0755", "owner": "rahmati", "path": "/opt/nginx-flask-mysql/nginx/sites-enabled"}, "mode": "0755", "owner": "rahmati", "path": "/opt/nginx-flask-mysql/nginx/sites-enabled", "size": 4096, "state": "directory", "uid": 1000}
+ok: [ubuntu_deploy] => (item={'path': '/opt/nginx-flask-mysql', 'owner': 'ubuntu', 'group': 'ubuntu', 'mode': '0755'}) => {"ansible_loop_var": "item", "changed": false, "gid": 1000, "group": "ubuntu", "item": {"group": "ubuntu", "mode": "0755", "owner": "ubuntu", "path": "/opt/nginx-flask-mysql"}, "mode": "0755", "owner": "ubuntu", "path": "/opt/nginx-flask-mysql", "size": 4096, "state": "directory", "uid": 1000}
+ok: [ubuntu_deploy] => (item={'path': '/opt/nginx-flask-mysql/app', 'owner': 'ubuntu', 'group': 'ubuntu', 'mode': '0755'}) => {"ansible_loop_var": "item", "changed": false, "gid": 1000, "group": "ubuntu", "item": {"group": "ubuntu", "mode": "0755", "owner": "ubuntu", "path": "/opt/nginx-flask-mysql/app"}, "mode": "0755", "owner": "ubuntu", "path": "/opt/nginx-flask-mysql/app", "size": 4096, "state": "directory", "uid": 1000}
+ok: [ubuntu_deploy] => (item={'path': '/opt/nginx-flask-mysql/nginx', 'owner': 'ubuntu', 'group': 'ubuntu', 'mode': '0755'}) => {"ansible_loop_var": "item", "changed": false, "gid": 1000, "group": "ubuntu", "item": {"group": "ubuntu", "mode": "0755", "owner": "ubuntu", "path": "/opt/nginx-flask-mysql/nginx"}, "mode": "0755", "owner": "ubuntu", "path": "/opt/nginx-flask-mysql/nginx", "size": 4096, "state": "directory", "uid": 1000}
+changed: [ubuntu_deploy] => (item={'path': '/opt/nginx-flask-mysql/nginx/sites-available', 'owner': 'ubuntu', 'group': 'ubuntu', 'mode': '0755'}) => {"ansible_loop_var": "item", "changed": true, "gid": 1000, "group": "ubuntu", "item": {"group": "ubuntu", "mode": "0755", "owner": "ubuntu", "path": "/opt/nginx-flask-mysql/nginx/sites-available"}, "mode": "0755", "owner": "ubuntu", "path": "/opt/nginx-flask-mysql/nginx/sites-available", "size": 4096, "state": "directory", "uid": 1000}
+changed: [ubuntu_deploy] => (item={'path': '/opt/nginx-flask-mysql/nginx/sites-enabled', 'owner': 'ubuntu', 'group': 'ubuntu', 'mode': '0755'}) => {"ansible_loop_var": "item", "changed": true, "gid": 1000, "group": "ubuntu", "item": {"group": "ubuntu", "mode": "0755", "owner": "ubuntu", "path": "/opt/nginx-flask-mysql/nginx/sites-enabled"}, "mode": "0755", "owner": "ubuntu", "path": "/opt/nginx-flask-mysql/nginx/sites-enabled", "size": 4096, "state": "directory", "uid": 1000}
 ok: [ubuntu_deploy] => (item={'path': '/opt/nginx-flask-mysql/certificates', 'owner': 'root', 'group': 'root', 'mode': '0750'}) => {"ansible_loop_var": "item", "changed": false, "gid": 0, "group": "root", "item": {"group": "root", "mode": "0750", "owner": "root", "path": "/opt/nginx-flask-mysql/certificates"}, "mode": "0750", "owner": "root", "path": "/opt/nginx-flask-mysql/certificates", "size": 4096, "state": "directory", "uid": 0}
 ok: [ubuntu_deploy] => (item={'path': '/opt/nginx-flask-mysql/secrets', 'owner': 'root', 'group': 'appcontainer', 'mode': '0750'}) => {"ansible_loop_var": "item", "changed": false, "gid": 10001, "group": "appcontainer", "item": {"group": "appcontainer", "mode": "0750", "owner": "root", "path": "/opt/nginx-flask-mysql/secrets"}, "mode": "0750", "owner": "root", "path": "/opt/nginx-flask-mysql/secrets", "size": 4096, "state": "directory", "uid": 0}
 
 TASK [Copy Dockerfile and application code] ************************************
-ok: [ubuntu_deploy] => (item={'src': 'Dockerfile', 'dest': 'Dockerfile', 'mode': '0644'}) => {"ansible_loop_var": "item", "changed": false, "checksum": "07676b05606464ee23e979966f32f88035debab1", "dest": "/opt/nginx-flask-mysql/Dockerfile", "gid": 1000, "group": "rahmati", "item": {"dest": "Dockerfile", "mode": "0644", "src": "Dockerfile"}, "mode": "0644", "owner": "rahmati", "path": "/opt/nginx-flask-mysql/Dockerfile", "size": 1093, "state": "file", "uid": 1000}
-changed: [ubuntu_deploy] => (item={'src': '.dockerignore', 'dest': '.dockerignore', 'mode': '0644'}) => {"ansible_loop_var": "item", "changed": true, "checksum": "87048d001642430e616bd2b280be78ae0a6d9d61", "dest": "/opt/nginx-flask-mysql/.dockerignore", "gid": 1000, "group": "rahmati", "item": {"dest": ".dockerignore", "mode": "0644", "src": ".dockerignore"}, "md5sum": "753ffabf549694dab6a714620257c621", "mode": "0644", "owner": "rahmati", "size": 176, "src": "/home/rahmati/.ansible/tmp/ansible-tmp-1787327555.3221302-2215369-243964162106428/.source", "state": "file", "uid": 1000}
-ok: [ubuntu_deploy] => (item={'src': 'app/hello.py', 'dest': 'app/hello.py', 'mode': '0644'}) => {"ansible_loop_var": "item", "changed": false, "checksum": "b4743fc77beafc4f6f5cdd0ae8c5a2b714b1332d", "dest": "/opt/nginx-flask-mysql/app/hello.py", "gid": 1000, "group": "rahmati", "item": {"dest": "app/hello.py", "mode": "0644", "src": "app/hello.py"}, "mode": "0644", "owner": "rahmati", "path": "/opt/nginx-flask-mysql/app/hello.py", "size": 1486, "state": "file", "uid": 1000}
-ok: [ubuntu_deploy] => (item={'src': 'app/requirements.txt', 'dest': 'app/requirements.txt', 'mode': '0644'}) => {"ansible_loop_var": "item", "changed": false, "checksum": "2e876efdb318e2f6ab8b8fada924df31eba94a99", "dest": "/opt/nginx-flask-mysql/app/requirements.txt", "gid": 1000, "group": "rahmati", "item": {"dest": "app/requirements.txt", "mode": "0644", "src": "app/requirements.txt"}, "mode": "0644", "owner": "rahmati", "path": "/opt/nginx-flask-mysql/app/requirements.txt", "size": 60, "state": "file", "uid": 1000}
+ok: [ubuntu_deploy] => (item={'src': 'Dockerfile', 'dest': 'Dockerfile', 'mode': '0644'}) => {"ansible_loop_var": "item", "changed": false, "checksum": "07676b05606464ee23e979966f32f88035debab1", "dest": "/opt/nginx-flask-mysql/Dockerfile", "gid": 1000, "group": "ubuntu", "item": {"dest": "Dockerfile", "mode": "0644", "src": "Dockerfile"}, "mode": "0644", "owner": "ubuntu", "path": "/opt/nginx-flask-mysql/Dockerfile", "size": 1093, "state": "file", "uid": 1000}
+changed: [ubuntu_deploy] => (item={'src': '.dockerignore', 'dest': '.dockerignore', 'mode': '0644'}) => {"ansible_loop_var": "item", "changed": true, "checksum": "87048d001642430e616bd2b280be78ae0a6d9d61", "dest": "/opt/nginx-flask-mysql/.dockerignore", "gid": 1000, "group": "ubuntu", "item": {"dest": ".dockerignore", "mode": "0644", "src": ".dockerignore"}, "md5sum": "753ffabf549694dab6a714620257c621", "mode": "0644", "owner": "ubuntu", "size": 176, "src": "/home/ubuntu/.ansible/tmp/ansible-tmp-1787327555.3221302-2215369-243964162106428/.source", "state": "file", "uid": 1000}
+ok: [ubuntu_deploy] => (item={'src': 'app/hello.py', 'dest': 'app/hello.py', 'mode': '0644'}) => {"ansible_loop_var": "item", "changed": false, "checksum": "b4743fc77beafc4f6f5cdd0ae8c5a2b714b1332d", "dest": "/opt/nginx-flask-mysql/app/hello.py", "gid": 1000, "group": "ubuntu", "item": {"dest": "app/hello.py", "mode": "0644", "src": "app/hello.py"}, "mode": "0644", "owner": "ubuntu", "path": "/opt/nginx-flask-mysql/app/hello.py", "size": 1486, "state": "file", "uid": 1000}
+ok: [ubuntu_deploy] => (item={'src': 'app/requirements.txt', 'dest': 'app/requirements.txt', 'mode': '0644'}) => {"ansible_loop_var": "item", "changed": false, "checksum": "2e876efdb318e2f6ab8b8fada924df31eba94a99", "dest": "/opt/nginx-flask-mysql/app/requirements.txt", "gid": 1000, "group": "ubuntu", "item": {"dest": "app/requirements.txt", "mode": "0644", "src": "app/requirements.txt"}, "mode": "0644", "owner": "ubuntu", "path": "/opt/nginx-flask-mysql/app/requirements.txt", "size": 60, "state": "file", "uid": 1000}
 
 TASK [Prevent certificates from entering the Docker build context] *************
 changed: [ubuntu_deploy] => {"backup": "", "changed": true, "msg": "line added"}
 
 TASK [Deploy the Compose environment file] *************************************
-changed: [ubuntu_deploy] => {"changed": true, "checksum": "4ac12b94a2e5f83229a8fc575965f0621a1f5d95", "dest": "/opt/nginx-flask-mysql/.env", "gid": 1000, "group": "rahmati", "md5sum": "ba5ad16efd364d567f04c315f00e5607", "mode": "0640", "owner": "rahmati", "size": 179, "src": "/home/rahmati/.ansible/tmp/ansible-tmp-1787327562.2758453-2215459-17136610278981/.source", "state": "file", "uid": 1000}
+changed: [ubuntu_deploy] => {"changed": true, "checksum": "4ac12b94a2e5f83229a8fc575965f0621a1f5d95", "dest": "/opt/nginx-flask-mysql/.env", "gid": 1000, "group": "ubuntu", "md5sum": "ba5ad16efd364d567f04c315f00e5607", "mode": "0640", "owner": "ubuntu", "size": 179, "src": "/home/ubuntu/.ansible/tmp/ansible-tmp-1787327562.2758453-2215459-17136610278981/.source", "state": "file", "uid": 1000}
 
 TASK [Deploy the Docker Compose file] ******************************************
-changed: [ubuntu_deploy] => {"changed": true, "checksum": "a07e3a97734771d2c6d9bf844820762d5f2c6707", "dest": "/opt/nginx-flask-mysql/docker-compose.yml", "gid": 1000, "group": "rahmati", "md5sum": "8fe91609bd2e1f5d04dac46629f391af", "mode": "0644", "owner": "rahmati", "size": 2170, "src": "/home/rahmati/.ansible/tmp/ansible-tmp-1787327564.0613742-2215491-46607409534232/.source.yml", "state": "file", "uid": 1000}
+changed: [ubuntu_deploy] => {"changed": true, "checksum": "a07e3a97734771d2c6d9bf844820762d5f2c6707", "dest": "/opt/nginx-flask-mysql/docker-compose.yml", "gid": 1000, "group": "ubuntu", "md5sum": "8fe91609bd2e1f5d04dac46629f391af", "mode": "0644", "owner": "ubuntu", "size": 2170, "src": "/home/ubuntu/.ansible/tmp/ansible-tmp-1787327564.0613742-2215491-46607409534232/.source.yml", "state": "file", "uid": 1000}
 
 TASK [Check whether the database password already exists] **********************
 ok: [ubuntu_deploy] => {"changed": false, "stat": {"atime": 1787327419.0613883, "attr_flags": "e", "attributes": ["extents"], "block_size": 4096, "blocks": 8, "charset": "us-ascii", "checksum": "aa125eb0a05946d78269680ffe0f2fb4175c1510", "ctime": 1787216840.5657003, "dev": 64768, "device_type": 0, "disk_usage_bytes": 4096, "executable": false, "exists": true, "gid": 10001, "gr_name": "appcontainer", "inode": 1190758, "isblk": false, "ischr": false, "isdir": false, "isfifo": false, "isgid": false, "islnk": false, "isreg": true, "issock": false, "isuid": false, "mimetype": "text/plain", "mode": "0640", "mtime": 1787216839.905697, "nlink": 1, "path": "/opt/nginx-flask-mysql/secrets/db_password.txt", "pw_name": "root", "readable": true, "rgrp": true, "roth": false, "rusr": true, "size": 48, "uid": 0, "version": "44330908", "wgrp": false, "woth": false, "writeable": true, "wusr": true, "xgrp": false, "xoth": false, "xusr": false}}
@@ -293,7 +293,7 @@ ok: [ubuntu_deploy] => {"changed": false, "changed_when_result": false, "cmd": [
 TASK [Deploy database and backend with Docker Compose] *************************
 [WARNING]: Docker compose: unknown None: /opt/nginx-flask-mysql/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion
 [ERROR]: Task failed: Module failed: General error: Error response from daemon: No such image: sha256:bd4d8e1db83cdd02c3c21968ec6bca06e637770935555e9881fe4b5acb3f4ebf
-Origin: /home/naser/naserrahmati_kubernetes_02/08_ansible_automation/deploy_app.yml:195:11
+Origin: /home/ubunto/fa-ni-na/08_ansible_automation/deploy_app.yml:195:11
 
 193       when: not ansible_check_mode
 194       block:
@@ -611,7 +611,7 @@ ok: [ubuntu_deploy] => {
 
 TASK [Stop after application deployment failure] *******************************
 [ERROR]: Task failed: Action failed: Application deployment failed. The recent Compose logs were displayed above for troubleshooting.
-Origin: /home/naser/naserrahmati_kubernetes_02/08_ansible_automation/deploy_app.yml:259:11
+Origin: /home/ubunto/fa-ni-na/08_ansible_automation/deploy_app.yml:259:11
 
 257             var: failed_application_logs.stdout_lines
 258
