@@ -1,4 +1,27 @@
-$ cat /etc/os-release
+total        used        free      shared  buff/cache   available
+Mem:           1.9Gi       517Mi       883Mi       1.0Mi       562Mi       1.3Gi
+Swap:          2.0Gi          0B       2.0Gi
+NAME                      MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+loop0                       7:0    0  40.4M  1 loop /snap/snapd/20671
+loop1                       7:1    0 115.3M  1 loop /snap/lxd/40338
+loop2                       7:2    0    74M  1 loop /snap/core22/2437
+loop3                       7:3    0  63.8M  1 loop /snap/core20/2866
+loop4                       7:4    0    87M  1 loop /snap/lxd/27037
+loop5                       7:5    0  63.9M  1 loop /snap/core20/2105
+sda                         8:0    0    25G  0 disk 
+├─sda1                      8:1    0     1M  0 part 
+├─sda2                      8:2    0     2G  0 part /boot
+└─sda3                      8:3    0    23G  0 part 
+  └─ubuntu--vg-ubuntu--lv 253:0    0  11.5G  0 lvm  /
+sr0                        11:0    1  1024M  1 rom  
+Filesystem                         Size  Used Avail Use% Mounted on
+tmpfs                              197M  1.7M  195M   1% /run
+/dev/mapper/ubuntu--vg-ubuntu--lv   12G  7.6G  3.2G  71% /
+tmpfs                              982M     0  982M   0% /dev/shm
+tmpfs                              5.0M     0  5.0M   0% /run/lock
+/dev/sda2                          2.0G  133M  1.7G   8% /boot
+tmpfs                              197M  4.0K  197M   1% /run/user/1000
+5.15.0-190-generic
 PRETTY_NAME="Ubuntu 22.04.5 LTS"
 NAME="Ubuntu"
 VERSION_ID="22.04"
@@ -11,91 +34,135 @@ SUPPORT_URL="https://help.ubuntu.com/"
 BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
 PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
 UBUNTU_CODENAME=jammy
-$ hostname
 target
-$ ip addr
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
        valid_lft forever preferred_lft forever
     inet6 ::1/128 scope host 
        valid_lft forever preferred_lft forever
-2: ens33: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
-    link/ether 00:50:56:a7:75:79 brd ff:ff:ff:ff:ff:ff
-    altname enp2s1
-    inet 172.20.10.5/24 brd 192.168.200.255 scope global ens33
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:46:54:84 brd ff:ff:ff:ff:ff:ff
+    inet 172.20.10.5/28 metric 100 brd 172.20.10.15 scope global dynamic enp0s3
+       valid_lft 3208sec preferred_lft 3208sec
+    inet6 fe80::a00:27ff:fe46:5484/64 scope link 
        valid_lft forever preferred_lft forever
-    inet6 fe80::250:56ff:fea7:7579/64 scope link 
+3: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether e6:12:e5:b6:d5:85 brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
        valid_lft forever preferred_lft forever
-$ lscpu
-Architecture:                            x86_64
-CPU op-mode(s):                          32-bit, 64-bit
-Address sizes:                           45 bits physical, 48 bits virtual
-Byte Order:                              Little Endian
-CPU(s):                                  4
-On-line CPU(s) list:                     0-3
-Vendor ID:                               GenuineIntel
-Model name:                              Intel(R) Xeon(R) CPU E5-2680 0 @ 2.70GHz
-CPU family:                              6
-Model:                                   45
-Thread(s) per core:                      1
-Core(s) per socket:                      4
-Socket(s):                               1
-Stepping:                                7
-BogoMIPS:                                5387.01
-Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx rdtscp lm constant_tsc arch_perfmon nopl xtopology tsc_reliable nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx hypervisor lahf_lm pti ssbd ibrs ibpb stibp tsc_adjust arat md_clear flush_l1d arch_capabilities
-Hypervisor vendor:                       VMware
-Virtualization type:                     full
-L1d cache:                               128 KiB (4 instances)
-L1i cache:                               128 KiB (4 instances)
-L2 cache:                                1 MiB (4 instances)
-L3 cache:                                20 MiB (1 instance)
-NUMA node(s):                            1
-NUMA node0 CPU(s):                       0-3
-Vulnerability Gather data sampling:      Not affected
-Vulnerability Indirect target selection: Mitigation; Aligned branch/return thunks
-Vulnerability Itlb multihit:             KVM: Mitigation: VMX unsupported
-Vulnerability L1tf:                      Mitigation; PTE Inversion
-Vulnerability Mds:                       Mitigation; Clear CPU buffers; SMT Host state unknown
-Vulnerability Meltdown:                  Mitigation; PTI
-Vulnerability Mmio stale data:           Unknown: No mitigations
-Vulnerability Reg file data sampling:    Not affected
-Vulnerability Retbleed:                  Mitigation; IBRS
-Vulnerability Spec rstack overflow:      Not affected
-Vulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl and seccomp
-Vulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
-Vulnerability Spectre v2:                Mitigation; IBRS; IBPB conditional; STIBP disabled; RSB filling; PBRSB-eIBRS Not affected; BHI SW loop, KVM SW loop
-Vulnerability Srbds:                     Not affected
-Vulnerability Tsa:                       Not affected
-Vulnerability Tsx async abort:           Not affected
-Vulnerability Vmscape:                   Not affected
-$ free -h
-               total        used        free      shared  buff/cache   available
-Mem:           3.8Gi       214Mi       3.1Gi       1.0Mi       476Mi       3.4Gi
-Swap:          4.0Gi          0B       4.0Gi
-$ lsblk
-NAME                       MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
-loop0                        7:0    0  63.9M  1 loop /snap/core20/2318
-loop1                        7:1    0    87M  1 loop /snap/lxd/29351
-loop2                        7:2    0  38.8M  1 loop /snap/snapd/21759
-loop3                        7:3    0    74M  1 loop /snap/core22/2411
-loop4                        7:4    0 115.3M  1 loop /snap/lxd/40338
-sda                          8:0    0   100G  0 disk 
-├─sda1                       8:1    0     1G  0 part /boot/efi
-├─sda2                       8:2    0     2G  0 part /boot
-└─sda3                       8:3    0  96.9G  0 part 
-  ├─ubuntu--vg-ubuntu--lv  253:0    0  86.9G  0 lvm  /
-  └─ubuntu--vg-ubuntu--tmp 253:1    0    10G  0 lvm  /tmp
-sr0                         11:0    1  1024M  0 rom  
-$ df -h
-Filesystem                          Size  Used Avail Use% Mounted on
-tmpfs                               392M  1.1M  391M   1% /run
-/dev/mapper/ubuntu--vg-ubuntu--lv    86G  7.5G   74G  10% /
-tmpfs                               2.0G     0  2.0G   0% /dev/shm
-tmpfs                               5.0M     0  5.0M   0% /run/lock
-/dev/sda2                           2.0G  134M  1.7G   8% /boot
-/dev/sda1                           1.1G  6.1M  1.1G   1% /boot/efi
-/dev/mapper/ubuntu--vg-ubuntu--tmp  9.8G   76K  9.3G   1% /tmp
-tmpfs                               392M  4.0K  392M   1% /run/user/1000
-$ uname -r
-5.15.0-187-generic
+4: br-53287b275503: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 92:9b:d4:0a:d1:ed brd ff:ff:ff:ff:ff:ff
+    inet 172.22.0.1/16 brd 172.22.255.255 scope global br-53287b275503
+       valid_lft forever preferred_lft forever
+    inet6 fe80::909b:d4ff:fe0a:d1ed/64 scope link 
+       valid_lft forever preferred_lft forever
+5: br-6cae4b44e6c6: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether be:7e:f7:87:45:49 brd ff:ff:ff:ff:ff:ff
+    inet 172.19.0.1/16 brd 172.19.255.255 scope global br-6cae4b44e6c6
+       valid_lft forever preferred_lft forever
+    inet6 fe80::bc7e:f7ff:fe87:4549/64 scope link 
+       valid_lft forever preferred_lft forever
+6: br-954b71594a0e: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether ea:69:8e:50:29:dc brd ff:ff:ff:ff:ff:ff
+    inet 172.21.0.1/16 brd 172.21.255.255 scope global br-954b71594a0e
+       valid_lft forever preferred_lft forever
+    inet6 fe80::e869:8eff:fe50:29dc/64 scope link 
+       valid_lft forever preferred_lft forever
+7: br-a0804adff732: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 3e:74:90:ab:68:35 brd ff:ff:ff:ff:ff:ff
+    ine
+
+t 172.18.0.1/16 brd 172.18.255.255 scope global br-a0804adff732
+       valid_lft forever preferred_lft forever
+    inet6 fe80::3c74:90ff:feab:6835/64 scope link 
+       valid_lft forever preferred_lft forever
+8: veth281d10d@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-954b71594a0e state UP group default 
+    link/ether 1e:fd:51:4d:b5:76 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet6 fe80::1cfd:51ff:fe4d:b576/64 scope link 
+       valid_lft forever preferred_lft forever
+9: veth581695c@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-a0804adff732 state UP group default 
+    link/ether be:eb:4b:d8:4d:cf brd ff:ff:ff:ff:ff:ff link-netnsid 1
+    inet6 fe80::bceb:4bff:fed8:4dcf/64 scope link 
+       valid_lft forever preferred_lft forever
+10: veth0d5996c@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-6cae4b44e6c6 state UP group default 
+    link/ether 8a:5f:5a:a9:bf:0e brd ff:ff:ff:ff:ff:ff link-netnsid 2
+    inet6 fe80::885f:5aff:fea9:bf0e/64 scope link 
+       valid_lft forever preferred_lft forever
+11: vethca24270@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-a0804adff732 state UP group default 
+    link/ether 02:0b:45:4d:c3:75 brd ff:ff:ff:ff:ff:ff link-netnsid 3
+    inet6 fe80::b:45ff:fe4d:c375/64 scope link 
+       valid_lft forever preferred_lft forever
+12: vethd6c7c77@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-53287b275503 state UP group default 
+    link/ether aa:b4:16:2e:45:3c brd ff:ff:ff:ff:ff:ff link-netnsid 4
+    inet6 fe80::a8b4:16ff:fe2e:453c/64 scope link 
+       valid_lft forever preferred_lft forever
+13: vethbe8ffd3@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-6cae4b44e6c6 state UP group default 
+    link/ether fa:d7:1b:1b:ac:a3 brd ff:ff:ff:ff:ff:ff link-netnsid 5
+    inet6 fe80::f8d7:1bff:fe1b:aca3/64 scope link 
+       valid_lft forever preferred_lft forever
+14: vethcacbfab@if3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-954b71594a0e state UP group default 
+    link/ether 7a:b8:b1:3a:74:53 brd ff:ff:ff:ff:ff:ff link-netnsid 2
+    inet6 fe80::78b8:b1ff:fe3a:7453/64 scope link 
+       valid_lft forever preferred_lft forever
+15: veth101d0ed@if3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-53287b275503 state UP group default 
+    link/ether e2:c5:03:eb:ed:43 brd ff:ff:ff:ff:ff:ff link-netnsid 1
+    inet6 fe80::e0c5:3ff:feeb:ed43/64 scope link 
+       valid_lft forever preferred_lft forever
+Architecture:                x86_64
+  CPU op-mode(s):            32-bit, 64-bit
+  Address sizes:             46 bits physical, 48 bits virtual
+  Byte Order:                Little Endian
+CPU(s):                      1
+  On-line CPU(s) list:       0
+Vendor ID:                   GenuineIntel
+  Model name:                Intel(R) Core(TM) Ultra 5 125H
+    CPU family:              6
+    Model:                   170
+    Thread(s) per core:      1
+    Core(s) per socket:      1
+    Socket(s):               1
+    Stepping:                4
+    BogoMIPS:                5990.39
+    Flags:                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pg
+                             e mca cmov pat pse36 clflush mmx fxsr sse sse2 ht s
+                             yscall nx rdtscp lm constant_tsc rep_good nopl xtop
+                             ology nonstop_tsc cpuid tsc_known_freq pni pclmulqd
+                             q ssse3 cx16 pcid sse4_1 sse4_2 movbe popcnt aes rd
+                             rand hypervisor lahf_lm abm 3dnowprefetch invpcid_s
+                             ingle ibrs_enhanced fsgsbase bmi1 bmi2 invpcid rdse
+                             ed adx clflushopt sha_ni arat md_clear flush_l1d ar
+                             ch_capabilities
+Virtualization features:     
+  Hypervisor vendor:         KVM
+  Virtualization type:       full
+Caches (sum of all):         
+  L1d:                       48 KiB (1 instance)
+  L1i:                       64 KiB (1 instance)
+  L2:                        2 MiB (1 instance)
+  L3:
+
+18 MiB (1 instance)
+NUMA:                        
+  NUMA node(s):              1
+  NUMA node0 CPU(s):         0
+Vulnerabilities:             
+  Gather data sampling:      Not affected
+  Indirect target selection: Mitigation; Aligned branch/return thunks
+  Itlb multihit:             Not affected
+  L1tf:                      Not affected
+  Mds:                       Not affected
+  Meltdown:                  Not affected
+  Mmio stale data:           Not affected
+  Reg file data sampling:    Not affected
+  Retbleed:                  Mitigation; Enhanced IBRS
+  Spec rstack overflow:      Not affected
+  Spec store bypass:         Vulnerable
+  Spectre v1:                Mitigation; usercopy/swapgs barriers and __user poi
+                             nter sanitization
+  Spectre v2:                Mitigation; Enhanced / Automatic IBRS; PBRSB-eIBRS 
+                             SW sequence; BHI SW loop, KVM SW loop
+  Srbds:                     Not affected
+  Tsa:                       Not affected
+  Tsx async abort:           Not affected
+  Vmscape:                   Not affected
