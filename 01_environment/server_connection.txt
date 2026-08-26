@@ -1,6 +1,6 @@
-# Server Connection Information
+Server Connection Information
 
-## SSH Connection
+SSH Connection
 
 Connection Method:
 SSH
@@ -11,22 +11,20 @@ Server IP:
 Username:
 ubuntu
 
-
 ==================================================
 
-## Kernel Version
+Kernel Version
 
 Command:
 uname -r
 
 Output:
 
-5.15.0-187-generic
-
+5.15.0-190-generic
 
 ==================================================
 
-## Operating System Version
+Operating System Version
 
 Command:
 lsb_release -a
@@ -38,43 +36,38 @@ Description: Ubuntu 22.04.5 LTS
 Release: 22.04
 Codename: jammy
 
-
 ==================================================
 
-## Disk Usage
+Disk Usage
 
 Command:
 df -h
 
 Output:
 
-Filesystem                          Size  Used Avail Use% Mounted on
+Filesystem                         Size  Used  Avail  Use%  Mounted on
 
-/dev/mapper/ubuntu--vg-ubuntu--lv    86G  7.5G   74G  10% /
-/dev/sda2                            2.0G 134M  1.7G   8% /boot
-/dev/sda1                            1.1G 6.1M  1.1G   1% /boot/efi
-/dev/mapper/ubuntu--vg-ubuntu--tmp   9.8G  76K  9.3G   1% /tmp
-
+/dev/mapper/ubuntu–vg-ubuntu–lv   12G  7.6G  3.2G   71%  /
+/dev/sda2                           2.0G  133M  1.7G    8%  /boot
 
 ==================================================
 
-## Memory Usage
+Memory Usage
 
 Command:
 free -h
 
 Output:
 
-               total        used        free      shared  buff/cache   available
+           total        used        free      shared  buff/cache   available
 
-Mem:           3.8Gi       214Mi       3.1Gi       1.0Mi       476Mi       3.4Gi
+Mem:           1.9Gi       517Mi       883Mi       1.0Mi       562Mi       1.3Gi
 
-Swap:          4.0Gi          0B       4.0Gi
-
+Swap:          2.0Gi          0B       2.0Gi
 
 ==================================================
 
-## Network Interfaces
+Network Interfaces
 
 Command:
 ip addr
@@ -82,36 +75,35 @@ ip addr
 Output:
 
 Interface:
-ens33
+enp0s3
 
 IPv4 Address:
-172.20.10.5/24
+172.20.10.5/28
 
 MAC Address:
-00:50:56:a7:75:79
-
+08:00:27:46:54:84
 
 ==================================================
 
-## Verification Summary
+Verification Summary
 
 Operating System:
 Ubuntu 22.04.5 LTS
 
 Kernel:
-5.15.0-187-generic
+5.15.0-190-generic
 
 CPU:
-Intel(R) Xeon(R) CPU E5-2680 0 @ 2.70GHz
+Intel(R) Core(TM) Ultra 5 125H
 
 CPU Count:
-4
+1
 
 RAM:
-3.8 GiB
+1.9 GiB
 
 Disk:
-100G
+25G
 
 Network:
-172.20.10.5/24
+172.20.10.5/28
